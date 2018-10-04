@@ -1,26 +1,24 @@
-// safe-box.js
+/// safe-box.js
 
-var safeBox = {
-    saveSecret: function(secret, password) {
+var safeBox;
+(function () {
+    var _password;
+    var _secret;
 
-        function safe() {
-            var secret = this.secret;
-            var password = this.password;
-            var datos = {
-                sec: secret,
-                pwr: password
-            }
+    safeBox = {
+        saveSecret: function (secret, password) {
+            if (typeof secret !== 'string' || !secret.trim().length) throw Error('invalid secret');
 
-            return datos
+            if (typeof password !== 'string' || !password.trim().length) throw Error('invalid password');
+
+            _secret = secret;
+            _password = password;
+        },
+
+        retrieveSecret: function (password) {
+            if (password !== _password) throw Error('invalid password');
+
+            return _secret;
         }
-
-    },
-
-    retrieveSecret: function(password) {
-        // TODO
-    }
-}
-
-console.log(safeBox.saveSecret('hola', 'psw'));
-
-
+    };
+})();
