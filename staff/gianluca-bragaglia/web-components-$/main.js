@@ -2,6 +2,7 @@ var panel = new Panel('hola mundo', 'section');
 
 
 //document.body.appendChild(panel.element);
+panel.element.appendTo('body');
 
 var dialog = new Dialog('hola mundo', 'lorem ipsum ...', 'section');
 

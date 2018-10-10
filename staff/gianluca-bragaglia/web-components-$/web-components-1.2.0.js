@@ -3,7 +3,7 @@ function Component(tag) {
     this.element = $('<' + tag + '/>'); 
 }
 
-Component.prototype.show = function () {
+/* Component.prototype.show = function () {
     //this.element.style.display = 'block';
     $(this.element).css('display', 'block');
 };
@@ -11,27 +11,29 @@ Component.prototype.show = function () {
 Component.prototype.hide = function () {
     //this.element.style.display = 'none';
     this.element.css('display', 'none');
-};
+}; */
 
 function Panel(title, tag) {
     Component.call(this, tag);
 
-   //this.element.className = 'panel';
-    $(this.element).addClass('panel');
+    //this.element.className = 'panel';
+    this.element.addClass('panel');
 
     /* this.title = document.createElement('h2');
     this.title.innerText = title;
     this.title.className = 'panel__title' */
 
     this.title = $('<h2></h2>');
-    $(this.title).text(title);
-    $(this.title).addClass('panel__title');
+    this.title.text(title);
+    this.title.addClass('panel__title');
 
 
 
     //this.element.appendChild(this.title);
-    this.element.appendTo('body');
+    this.title.appendTo(this.element);
 }
+
+
 
 Panel.prototype = Object.create(Component.prototype);
 Panel.prototype.constructor = Panel;
@@ -39,12 +41,12 @@ Panel.prototype.constructor = Panel;
 function Dialog(title, text, tag) {
     Panel.call(this, title, tag);
 
-    this.element.className = 'dialog';
+    this.element.addClass('dialog');
 
-    this.title.className = 'dialog__title';
+    this.title.addClass('dialog__title');
 
     this.body = document.createElement('p');
-    this.body.innerText = text;
+    this.body.text(text);
     this.body.className = 'dialog__body';
 
     this.element.appendChild(this.body);
@@ -71,8 +73,8 @@ function Alert(title, text, tag, callback, error) {
     //     self.element.style.display = 'none';
     // });
 
-    this.accept.addEventListener('click', function () {
-        this.element.style.display = 'none';
+    this.accept.on('click', function () {
+        this.element.hide();
 
         callback();
     }.bind(this));
@@ -98,8 +100,8 @@ function Confirm(title, text, tag, acceptCallback, cancelCallback) {
     this.cancel.innerText = 'Cancel';
     this.cancel.className = 'confirm__button';
 
-    this.cancel.addEventListener('click', function () {
-        this.element.style.display = 'none';
+    this.cancel.on('click', function () {
+        this.element.hide();
 
         cancelCallback();
     }.bind(this));
@@ -110,8 +112,8 @@ function Confirm(title, text, tag, acceptCallback, cancelCallback) {
     this.accept.innerText = 'Accept';
     this.accept.className = 'confirm__button confirm__button--accept';
 
-    this.accept.addEventListener('click', function () {
-        this.element.style.display = 'none';
+    this.accept.on('click', function () {
+        this.element.hide();
 
         acceptCallback();
     }.bind(this));
