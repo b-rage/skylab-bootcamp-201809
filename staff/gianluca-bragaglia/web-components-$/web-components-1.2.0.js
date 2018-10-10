@@ -1,25 +1,36 @@
 function Component(tag) {
-    this.element = document.createElement(tag);
+    //this.element = document.createElement(tag);
+    this.element = $('<' + tag + '/>'); 
 }
 
 Component.prototype.show = function () {
-    this.element.style.display = 'block';
+    //this.element.style.display = 'block';
+    $(this.element).css('display', 'block');
 };
 
 Component.prototype.hide = function () {
-    this.element.style.display = 'none';
+    //this.element.style.display = 'none';
+    this.element.css('display', 'none');
 };
 
 function Panel(title, tag) {
     Component.call(this, tag);
 
-    this.element.className = 'panel';
+   //this.element.className = 'panel';
+    $(this.element).addClass('panel');
 
-    this.title = document.createElement('h2');
+    /* this.title = document.createElement('h2');
     this.title.innerText = title;
-    this.title.className = 'panel__title'
+    this.title.className = 'panel__title' */
 
-    this.element.appendChild(this.title);
+    this.title = $('<h2></h2>');
+    $(this.title).text(title);
+    $(this.title).addClass('panel__title');
+
+
+
+    //this.element.appendChild(this.title);
+    this.element.appendTo('body');
 }
 
 Panel.prototype = Object.create(Component.prototype);
