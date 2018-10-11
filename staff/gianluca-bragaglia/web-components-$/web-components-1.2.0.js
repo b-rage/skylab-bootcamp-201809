@@ -49,7 +49,7 @@ function Dialog(title, text, tag) {
     this.body.text(text);
     this.body.addClass('dialog__body');
 
-    this.element.appendTo(this.body);
+    this.body.appendTo(this.element);
 }
 
 Dialog.prototype = Object.create(Panel.prototype);
