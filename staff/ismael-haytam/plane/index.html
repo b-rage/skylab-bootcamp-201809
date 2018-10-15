@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Components</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            background-image: linear-gradient(lightblue, gray);
+        }
+        #cloud2 {
+            position: absolute;
+            width: 900px;
+            height: 500px;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+        .info {
+            line-height: 50px;
+            background: rgba(255, 255, 255, .3);
+            padding-left: 20px; 
+        }
+    </style>
+</head>
+<body>
+    
+        <div class="info">
+            <span>Teclas (a - d) para cambiar la dirección del tímon **** flecha arriba para mantener el avion flotando **** derecha y izquierda  para dar vueltas en el aire</span>
+        </div>
+        <img src="./img/cloud.png" alt="cloud">
+        <img id="cloud2" src="./img/cloud2.png" alt="cloud">
+        <script src="web-components-1.0.0.js"></script>
+        <script src="plane.js"></script>
+        <script src="main.js"></script>
+
+
+</body>
+</html>

@@ -1,33 +1,33 @@
 var logic = {
-    call: function (path, callback, defaultValueOnError) {
-        var xhr = new XMLHttpRequest();
+    call: function (path, defaultValueOnError) {
+        return new Promise((resolve, reject) => {
+            var xhr = new XMLHttpRequest();
 
-        xhr.addEventListener("load", function () {
-            var res = JSON.parse(xhr.responseText);
+            xhr.addEventListener('load', function () {
+                var res = JSON.parse(xhr.responseText);
 
-            callback(res);
-        });
+                resolve(res);
+            });
 
-        xhr.addEventListener("error", function () {
-            callback(defaultValueOnError);
-        });
+            xhr.addEventListener('error', function () {
+                reject(defaultValueOnError);
+            });
 
-        xhr.open('get', 'https://quiet-inlet-67115.herokuapp.com/api' + path);
+            xhr.open('get', 'https://quiet-inlet-67115.herokuapp.com/api' + path);
 
-        xhr.send();
+            xhr.send();
+        })
     },
 
-    search: function (query, callback) {
+    search: function (query) {
         if (typeof query !== 'string') throw TypeError(query + ' is not a string');
 
         if (!query.trim().length) throw Error('query is empty or blank');
 
-        if (typeof callback !== 'function') throw TypeError(callback + ' is not a function');
-
-        this.call('/search/all?q=' + query, callback, []);
+        return this.call('/search/all?q=' + query, []);
     },
 
-    retrieveBeer: function (id, callback) {
-        this.call('/beer/' + id, callback);
+    retrieveBeer: function (id) {
+        return this.call('/beer/' + id);
     }
 };
