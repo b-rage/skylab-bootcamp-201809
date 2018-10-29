@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans')
+*
+    font-family: 'PT Sans', sans-serif
+    margin: 0
+    padding: 0
+.burger-menu
+    display: block
+    position: relative
+    height: 3em
+    z-index: 1
+    background: #ededed 
+    &__title
+        margin-left: 0.7em
+        padding-top: 0.6em
+        color: lightseagreen
+    &__container
+        position: absolute
+        top: 10%
+        right: 2%
+        height: 2.3em
+        width: 3em
+        border: 1px solid #cdcdcd
+        border-radius: 3px 
+    &__checkbox
+        display: block
+        position: relative
+        right: 1.5em
+        height: 3.5em
+        width: 7em
+        opacity: 0
+        z-index: 2
+    &__lines
+        display: block
+        position: relative
+        right: -0.5em
+        top: -1.8em
+        height: 0.15em
+        width: 2em
+        margin-bottom: 0.3em
+        border-radius: 3px
+        background: #cdcdcd
+        z-index: 1
+    // &__checkbox:checked + .burger-menu__lines
+    //     opacity: 1
+    //     transform: rotate(45deg) translate(0.5em,0.3em)
+    // &__checkbox:checked + .first, .burger-menu__checkbox:checked + .second
+    //     opacity: 1
+    //     transform: rotate(90deg) translate(0.5em,0em)
+    // &__checkbox:checked + .second
+    //     display: none !important
+    //     opacity: 0 !important
+    //     transform: rotate(-45deg) translate(0.5em,0.3em)
+    // &__checkbox:checked + .burger-list
+    //     opacity: 1
+.burger-menu__checkbox:checked ~ 
+    .first
+        opacity: 1
+        transform: rotate(90deg) translate(0.5em,0em)
+    .third
+        display: none
+    .burger-list
+        opacity: 1
+.burger-list
+    position: absolute
+    background: #ededed 
+    // transform-origin: 0% 0%
+    list-style-type: none
+    top: 100%
+    width: 100%
+    padding-left: 0.7em
+    padding-bottom: 0.7em
+    opacity: 0
+    &__element
+        text-decoration: none
+        color: #232323
+.burger-menu__checkbox:checked + .burger-list
+    opacity: 0.7
+
+.main-top
+    display: flex
+    height: 25em
+    flex-direction: column
+    justify-content: space-around
+    align-items: center
+    background: rgb(27, 34, 42)
+    padding: 1em 0
+    &__title
+        color: white
+        font-size: 2em
+        font-weight: bold
+        display: inline
+.main-top__title--green 
+    color: lightseagreen
+    display: inline
+.main-top__text
+    color: white
+    font-size: 1.5em
+    margin: 0 9%
+    text-align: center
+    font-weight: normal
+.main-middle
+    height: 110em
+    display: flex
+    align-items: flex-start
+    flex-direction: column
+    justify-content: space-around
+    margin: 5% 5%
+    &__img
+        border: 1px solid #cdcdcd
+        max-width: 100%
+        max-height: 30em
+    &__title
+        font-size: 2em
+        font-weight: bold
+    &__button
+        border: 1px solid #cdcdcd
+        border-radius: 4px
+        height: 2.5em
+        width: 7em
+        background: white
+        font-size: 1em
+.main-bottom
+    background: rgb(34, 171, 153)
+    height: 35em
+    display: flex
+    align-items: flex-start
+    flex-direction: column
+    justify-content: space-around
+    padding: 5% 10%
+    &__title
+        font-size: 2.5em
+        color: white
+        font-weight: bold
+        margin-bottom: -0.4em
+.main-bottom-list
+    list-style-type: none
+    color: white
+    font-weight: bold
+    font-size: 1.4em
+    &__element
+        margin-bottom: 0.4em
+.footer
+    background: rgb(51, 51, 51)
+    height: 10em
+    display: flex
+    align-items: center
+    flex-direction: column
+    justify-content: space-around
+    padding: 5% 10%
+.footer-nav
+    display: flex
+    flex-direction: row
+    width: 80%
+    &__element
+        color: white
+        text-decoration: none
+        margin-right: 5%
+    &__element--last
+        margin-right: 0
+.footer-text
+    color: white
+

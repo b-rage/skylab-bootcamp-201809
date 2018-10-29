@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <section class="title">
+            <h1>Spotify App 🎧</h1>
+            <form class='main-form'>
+                <input type='text'>
+                <button type='submit'>Search</button>
+            </form>
+        </section>
+
+        <section class='artists'>
+            <h2 class='artists__title'>Artists</h2>
+            <ul>
+            </ul>
+        </section>
+
+        <section class='albums'>
+            <h3 class='albums__title'></h3>
+            <div class='albums__list'>
+                <ul>
+                </ul>
+            </div>
+        </section>
+
+        <section class='songs'>
+            <h4 class='songs__title'></h4>
+            <div class="songs__list">
+                <ul>
+                </ul>
+            </div>
+        </section>
+
+
+        <section class='song'>
+            <h5></h5>
+            <audio class='player' controls autoplay loop></audio>
+        </section>
+    </div>
+
+    <script src='vendor/jquery/3.3.1/jquery-3.3.1.min.js'></script>
+    <script src='logic.js'></script>
+    <script src='main.js'></script>
+</body>
+
+</html>

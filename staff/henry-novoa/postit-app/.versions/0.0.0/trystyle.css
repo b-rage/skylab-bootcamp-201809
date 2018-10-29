@@ -1,0 +1,12 @@
+.postit{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: yellow;
+    width: 150px;
+    height: 100px;
+}
+
+.form{
+    display:flex;
+    flex-wrap:wrap;
+}

@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans");
+.panel {
+  width: 400px;
+  min-height: 450px;
+  padding-top: 15%;
+  background: darkcyan;
+  border-radius: 30px;
+  border: 2px solid darkgoldenrod;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: "PT Sans", sans-serif;
+}
+.panel__title {
+  color: darkgoldenrod;
+}
+.panel__button {
+  background: grey;
+  border: 2px solid darkgrey;
+  border-radius: 5px;
+  width: 100px;
+  height: 30px;
+}
+.panel__back {
+  color: darkgrey;
+  margin-top: 1em;
+}
+
+.panel-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.panel-form__element {
+  margin: 5%;
+}
+
+/*# sourceMappingURL=custom-components.css.map */

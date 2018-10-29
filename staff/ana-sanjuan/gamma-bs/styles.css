@@ -1,0 +1,73 @@
+@charset "UTF-8";
+.navbar-brand {
+  color: #1BAA98;
+}
+
+.btn {
+  background-color: white;
+}
+
+.lower-header {
+  background-color: #1B222A;
+  text-align: center;
+  color: white;
+  padding: 8% 5%;
+}
+.lower-header__title {
+  margin: 3% 0;
+}
+.lower-header__app-store {
+  margin: 3% 0;
+}
+.lower-header__google-icon {
+  margin: 3% 0;
+}
+
+.title__green {
+  color: #1BAA98;
+}
+
+.images__container {
+  display: block;
+}
+
+.section__button {
+  border: 1px solid gray;
+  background-color: white;
+  border-radius: 5px;
+  color: black;
+}
+
+.footer {
+  background-color: #1BAA98;
+  padding-top: 10%;
+  color: white;
+}
+.footer__nav {
+  background-color: #333333;
+  text-align: center;
+  margin: 10% auto;
+  padding: 5% 0;
+}
+.footer__nav ul {
+  list-style: none;
+}
+.footer__nav li {
+  display: inline;
+  margin: 2%;
+  list-style-type: none;
+}
+.footer__features ul {
+  list-style: none;
+}
+.footer__features li:before {
+  content: "✓";
+}
+.footer__features img {
+  margin-left: 10%;
+}
+.footer__features h2 {
+  margin-left: 10%;
+}
+
+/*# sourceMappingURL=styles.css.map */

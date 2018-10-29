@@ -27,7 +27,9 @@ tests.push(function () {
 
     var nums = [5, 1, 8, 3, 4];
 
-    var res = find(nums, function (elem) { return elem > 10; });
+    var res = find(nums, function (elem) {
+        return elem > 10;
+    });
 
     if (res !== undefined) throw Error('result is not undefined');
 });
@@ -37,7 +39,9 @@ tests.push(function () {
 
     var nums = [5, 12, 8, 130, 44];
 
-    var res = find(nums, function (elem) { return elem > 10; });
+    var res = find(nums, function (elem) {
+        return elem > 10;
+    });
 
     if (res !== 12) throw Error('result does not match expected value');
 });
@@ -47,7 +51,9 @@ tests.push(function () {
 
     var nums = ['5', '12', '8', '130', '44'];
 
-    var res = find(nums, function (elem) { return elem == 8; });
+    var res = find(nums, function (elem) {
+        return elem == 8;
+    });
 
     if (res !== '8') throw Error('result does not match expected value');
 });
@@ -73,7 +79,7 @@ tests.push(function () { // BDD-like
 
     var expected = nums.find(condition);
 
-    var result = find(nums, condition);
+    var result = nums.find(nums, condition);
 
     if (result !== expected) throw Error('result does not match expected value');
 });

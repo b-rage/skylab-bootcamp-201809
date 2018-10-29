@@ -1,0 +1,100 @@
+@charset "UTF-8";
+header {
+  background-color: black; }
+
+.navbar-brand {
+  color: #1caa98; }
+
+.main__up {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  background-color: black;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.up__title {
+  padding-top: 5%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white; }
+
+.title__life {
+  color: #1caa98; }
+
+.rounded {
+  max-width: 150px;
+  max-height: 250px;
+  margin-bottom: 25px; }
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.card {
+  margin: 10% 0% -5% 4%; }
+
+.card-img-top {
+  border: 1px solid grey;
+  max-width: 450px;
+  max-height: 450px; }
+
+.btn-primary {
+  background-color: white;
+  border-color: grey;
+  border-radius: 5px;
+  color: black; }
+
+.justify-content-center {
+  background-color: grey;
+  color: white; }
+
+.fooder {
+  background-color: #1caa98;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 10%;
+  color: white; }
+
+.fooder__up {
+  background-color: #1caa98;
+  margin-top: 15%;
+  padding-left: 15%;
+  color: white; }
+  .fooder__up .list {
+    list-style: none; }
+    .fooder__up .list li:before {
+      content: "✓"; }
+
+.fooder__logo {
+  text-align: left;
+  max-width: 200px;
+  max-height: 300px;
+  margin-bottom: 5%; }
+
+.fooder__down {
+  background-color: grey;
+  text-align: center; }
+
+@media screen and (min-width: 400px) {
+  background-color: green; }
+@media screen and (min-width: 800px) {
+  background-color: yellow; }

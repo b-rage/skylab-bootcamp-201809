@@ -1,0 +1,60 @@
+
+
+body {
+    font-family: "Charmonman", cursive;
+    background-image: url("tablero.jpg");
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 900px;
+  }
+  body .app_cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px;
+  }
+  body .title {
+    display: flex;
+    text-align: center;
+  }
+  body .btn {
+    padding: 10px;
+    background-color: #7373a5;
+    display: flex;
+    margin-top: 10px;
+  }
+  body .textarea {
+    display: flex;
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+    display: flex;
+  }
+  body .article_cont {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    max-width: 780px;
+    flex-wrap: wrap;
+  }
+  body .article_cont .postit {
+    background-image: url("postit.png");
+    background-color: transparent;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    margin-top: 30px;
+    text-align: center;
+    width: 200px;
+    height: 190px;
+    background-repeat: no-repeat;
+    resize: none
+  }

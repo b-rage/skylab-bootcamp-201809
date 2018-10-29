@@ -1,0 +1,27 @@
+.article{
+    background-color: yellow;
+    display: flex;
+    width: 25vw;
+    height: 25vh;
+    margin: 10px;
+    padding: 10px;
+    flex-direction: column;
+}
+textarea{
+    margin-bottom: 10px;
+    background-color: #00ffff00;
+    border-color: #00ffff00;
+    resize: none;
+}
+
+.container{
+    margin: auto;
+    text-align: center;
+}
+
+.posts-container{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    justify-content: center;
+}

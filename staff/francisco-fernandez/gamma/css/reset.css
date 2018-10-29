@@ -1,0 +1,13 @@
+html, body {
+  height: 100vh; }
+
+body {
+  margin: 0px; }
+
+* {
+  box-sizing: border-box; }
+
+ul {
+  margin: 0; }
+
+/*# sourceMappingURL=reset.css.map */

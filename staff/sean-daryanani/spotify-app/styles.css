@@ -1,0 +1,46 @@
+body {
+    background: url('images/cool-background.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+i {
+    color: green
+}
+
+ul {
+    width: 100%;
+    
+}
+
+/* .list-group-item {
+    background: #4CA1AF;  
+    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  
+    background: linear-gradient(to right, #C4E0E5, #4CA1AF); 
+    
+
+} */
+
+
+h2, h3, h4, h5 {
+    text-align: center;
+    color: white
+}
+
+.artists, .albums, .tracks, .trackInfo {
+    width: 47%;
+    height: 400px;
+    overflow: auto;
+    margin: 10px;
+}
+
+.trackInfo {
+    text-align: center
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+$primary: #1caa98
+    
+body
+    margin: 0
+    font-family: 'Roboto', sans-serif
+
+header
+    padding: 0 10px
+    background: #f8f8f8
+    display: flex
+    line-height: 50px
+    justify-content: space-between
+    a 
+        text-decoration: none
+        color: $primary
+        font-weight: bold
+    img
+        height: 20px
+        width: 20px
+
+.app-store 
+    padding: 30px 0
+    background: #1b222a
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    h2
+        color: white
+    p 
+        color: white
+        width: 80%
+        text-align: center
+    img 
+        padding: 7px 0
+    .turquesa
+        color: $primary
+    
+    @media screen and (min-width: 580px)
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        background-image: url('./images/site_showcase_bg.jpg')
+        background-size: cover
+        .app-store__button
+            margin: 10px;
+    
+
+
+.news 
+    padding: 60px 0
+    display: flex
+    flex-direction: column
+    align-items: center
+    article
+        display: none
+        padding: 10px 0
+        width: 90%
+        .news__image
+            max-width: 100%
+            border: 1px solid rgba(0, 0, 0, .2)
+            text-align: center
+        a 
+            color: rgba(0, 0, 0, .7)
+            text-decoration: none
+            border: 1px solid rgba(0, 0, 0, .2)
+            border-radius: 5px
+            padding: 5px 10px
+    @media screen and (min-width: 1400px)
+        display: none
+        flex-direction: row
+
+.features 
+    background: $primary
+    padding: 35px 45px
+    h1 
+        color: white
+        font-size: 2em
+    ul
+        list-style: none
+        padding-left: 0
+        li
+            font-size: 1.2em
+            color: white
+            font-weight: bold
+            padding-bottom: 15px
+            img
+                height: 15px
+                filter: invert(100%)
+
+footer 
+    background-color: #333333
+    padding: 20px
+    ul 
+        display: flex
+        padding-left: 0
+        justify-content: center
+        list-style: none
+        li 
+            padding: 0px 5px
+            a 
+                text-decoration: none
+                color: white   
+
+    p 
+        content: center
+        text-align: center;
+        color: white   

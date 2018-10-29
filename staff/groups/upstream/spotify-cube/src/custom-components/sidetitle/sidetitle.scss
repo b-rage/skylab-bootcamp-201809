@@ -1,0 +1,28 @@
+.panel-inf{
+    border: 1px solid white;
+    margin-top: 2em;
+    border-radius: 5px;
+    background: rgb(68,68,68); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(68,68,68,0.8) 1%, rgba(22,22,22,0.8) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(68,68,68,0.8) 1%,rgba(22,22,22,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(68,68,68,0.8) 1%,rgba(22,22,22,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#444444', endColorstr='#161616',GradientType=0 ); /* IE6-9 */
+    
+    & h1 {
+        font-size: 30px;
+        color: white;
+}
+   
+    & .panel-inf__main-section{
+        justify-content: space-between;
+        display: flex;
+        padding: 1em 3em;
+        & .panel-inf__main-section__img-section{
+            width: 10%;
+        }
+        & .panel-inf__main-section__name-section{
+            max-width: 60%;
+           
+        }
+    }
+}

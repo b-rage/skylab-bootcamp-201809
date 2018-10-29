@@ -1,0 +1,56 @@
+body {
+    display: block;
+}
+
+section {
+    padding-top: 35px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-group {
+    max-height: 350px;
+    overflow-y: auto
+}
+
+.artists {
+    width: 45%;
+}
+
+.albums {
+    width: 45%;
+}
+
+.tracks {
+    width: 45%;
+}
+
+.player {
+    width: 45%;
+}
+
+.img-circle {
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+@media (max-width: 992px) {
+    .container {
+        display: block;
+    }
+    .artists {
+        width: 95%;
+    }
+    .albums {
+        width: 95%;
+    }
+    .tracks {
+        width: 95%;
+    }
+    .player {
+        width: 95%;
+    }
+}

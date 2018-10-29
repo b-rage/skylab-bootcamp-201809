@@ -82,6 +82,7 @@
         ayay.push(2);
         ayay.push(3);
 
+        //FUNCTION test
         //ayay.pop(function)
 
         if(result.length !== ayay.length-1) throw Error ('unexpected result length');

@@ -1,0 +1,296 @@
+$color-primary: #026aa7;
+$color-success: #5aac44;
+$color-danger: #d9534f;
+$color-board: #dfe3e6;
+$color-text: #17394d;
+
+%board {
+    position: relative;
+    height: fit-content;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: $color-board;
+    border-radius: 1rem;
+}
+
+%post {
+    width: -webkit-fill-available;
+    padding: .5rem;
+    background-color: #fff;
+    border: none;
+    border-radius: .5rem;
+    box-shadow: 0px 3px 5px -3px rgba(0,0,0,0.75);
+
+    &:focus {
+        outline: none;
+    }
+}
+
+%title {
+    margin: 0;
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+%input {
+    width: -webkit-fill-available;
+    height: 20px;
+    margin: 0 0 .5rem;
+    padding: 4px;
+    font-size: 14px;
+    color: #000;
+    background-color: #fff;
+    border: 2px solid $color-primary;
+    border-radius: .5rem;
+    transition: border-color 1s linear;
+
+    &.is-invalid {
+        border-color: $color-danger;
+        transition: border-color .1s linear;
+    }
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+%button {
+    padding: .5rem;
+    border: none;
+    border-radius: .5rem;
+    background-color: $color-success;
+    box-shadow: 0px 3px 5px -3px darken($color-success, 10%);
+    color: #fff;
+    font-size: 16px;
+    transition: all .1s linear;
+
+    &:hover {
+        cursor: pointer;
+        background-color: darken($color-success, 5%);
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+%link {
+    padding: 0;
+    border: none;
+    border-radius: .5rem;
+    background-color: transparent;
+    color: $color-text;
+    font-size: 16px;
+
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+@mixin delete($size) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $size;
+    height: $size;
+    background-color: transparent;
+    border: none;
+    border-radius: .5rem;
+    font-size: 12px;
+    color: #333;
+    cursor: pointer;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Helvetica Neue, Arial, Helvetica, sans-serif;
+
+    .main {
+        display: grid;
+        grid-template-rows: 60px calc(100vh - 60px);
+        background-color: $color_primary;
+
+        .header {
+            position: relative;
+            background-color: darken($color_primary, 10%);
+
+            &__title {
+                margin: 0;
+                text-align: center;
+                font-size: 48px;
+                line-height: 60px;
+                color: #fff;
+            }
+
+            .dropdown {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                height: 40px;
+                color: $color-text;
+
+                &__title {
+                    @extend %title;
+                    padding: 10px 15px;
+                    line-height: 40px;
+                    border-radius: 1rem;
+                    background-color: $color-board;
+                    text-transform: uppercase;
+                }
+
+                &__content {
+                    position: absolute;
+                    right: 0;
+                    display: none;
+                    border-radius: 1rem;
+                    background-color: $color-board;
+                }
+
+                &__list {
+                    width: max-content;
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 10px;
+                }
+
+                &__link {
+                    @extend %link;
+                    padding: .25rem .5rem;
+                }
+
+                &:hover .dropdown__content {
+                    display: block;
+                }
+            }
+        }
+
+        &__auth {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .login, .register {
+                @extend %board;
+
+                &__title {
+                    margin: 0;
+                    font-size: 24px;
+                    margin-bottom: .5rem;
+                }
+
+                .form {
+                    &__group {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    &__label {
+                        margin: 0;
+                        font-size: 14px;
+                        font-weight: 500;
+                    }
+
+                    &__input {
+                        @extend %input;
+                        width: 400px;
+                        height: 30px;
+                        line-height: 30px;
+                        font-size: 16px;
+                    }
+
+                    &__button {
+                        @extend %button;
+                    }
+
+                    &__text {
+                        display: inline-block;
+                        margin: 0 .5rem;
+                        color: $color-text;
+                    }
+
+                    &__link {
+                        @extend %link;
+                    }
+                }
+            }
+        }
+
+        &__boards {
+            display: flex;
+            flex-direction: row;
+            padding: 1rem;
+            overflow-x: scroll;
+            min-width: 0;
+
+            .board {
+                @extend %board;
+                min-width: 240px;
+                max-width: 240px;
+
+                &__title {
+                    @extend %title;
+                    height: 30px;
+                    margin-bottom: .5rem;
+                    color: $color-text;
+
+                    &:focus {
+                        @extend %input;
+                    }
+                }
+
+                .post{
+                    @extend %post;
+                    position: relative;
+                    margin-bottom: .5rem;
+
+                    &__title {
+                        @extend %title;
+                        font-size: 14px;
+                        font-weight: 400;
+                    }
+
+                    &__button {
+                        @include delete(20px);
+                    }
+                }
+
+                &__input {
+                    @extend %post;
+                }
+
+                &__button {
+                    @include delete(25px);
+                }
+            }
+
+            .add {
+                @extend %board;
+                min-width: 240px;
+                max-width: 240px;
+
+                &__input {
+                    @extend %input;
+                }
+
+                &__button {
+                    @extend %button;
+                }
+            }
+        }
+    }
+}

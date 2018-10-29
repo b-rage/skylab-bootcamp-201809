@@ -1,0 +1,105 @@
+
+
+$green__color: #1BAA98
+
+
+.upper-header
+    color: $green__color 
+    display: flex
+    justify-content: space-between
+    width: 100%
+
+.burger__container
+    border-radius: 10px
+    border: 1px solid gray
+    padding: 2% 4%
+    
+.burger
+    width: 40px
+    height: 5px
+    background-color: black
+    margin: 6px 0
+
+.lower-header
+    background-color: #1B222A
+    text-align: center
+    color: white
+    padding: 8% 0%
+    &__title
+        margin: 3% 0
+    &__app-store
+        margin: 3% 0
+    &__google-icon
+        margin: 3% 0
+
+.title__green
+    color: $green__color
+
+.images__container
+    display: block
+
+.main
+    margin: 10% 0
+    img
+        border: 1px solid gray
+        width: 95%
+        margin: 5% 2%
+    &__section
+        margin: 4% 0
+        h2
+            margin: 0% 0
+
+.section__button
+    border: 1px solid gray
+    background-color: white
+    border-radius: 5px
+
+.footer
+    background-color: $green__color
+    padding-top: 10%
+    color: white
+    &__nav
+        background-color: #333333
+        text-align: center
+        margin: 10% auto
+        padding: 5% 0
+        ul 
+            list-style: none    
+        li 
+            display: inline
+            margin: 2%
+            list-style-type: none
+    &__features
+        ul 
+            list-style: none
+        li:before 
+            content: '✓'
+        img 
+            margin-left: 10%
+        h2 
+            margin-left: 10%
+            
+       
+@media only screen and (min-width: 540px) 
+
+    .lower-header
+        background-color: #1B222A
+        text-align: left
+        color: white
+        padding: 8% 0%
+        &__title
+            margin: 3% 0
+        &__app-store
+            margin: 3% 0
+        &__google-icon
+            margin: 3% 0
+
+    .images__container
+        display: flex
+        justify-content: space-between
+
+
+    .footer__nav
+        text-align: left
+        p 
+            text-align: right

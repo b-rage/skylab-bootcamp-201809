@@ -1,0 +1,31 @@
+body {
+  background: #4CA1AF;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #C4E0E5, #4CA1AF);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.container {
+  width: 40%;
+  margin: 200px auto;
+  height: 500px;
+  border: 5px solid #8980a1;
+  border-radius: 10px;
+}
+
+.btn-primary {
+  display: block;
+}
+
+.panel {
+  height: 90%;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/*# sourceMappingURL=custom-components.css.map */

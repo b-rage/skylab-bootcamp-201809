@@ -1,0 +1,26 @@
+body {
+  background-color: #f4f4f4; 
+}
+
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.artists h6 {
+  margin: .5rem 0;
+}
+
+.artist {
+  cursor: pointer;
+}
+
+.list-group-item {
+  background-color: inherit;
+}
+
+.list-group-item-action:focus, .list-group-item-action:hover {
+  color: #f8f9fa;
+  text-decoration: none;
+  background-color: #007bff;
+}

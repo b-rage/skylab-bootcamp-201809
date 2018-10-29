@@ -1,0 +1,1 @@
+var h = new cubeComponent("section",$(".container").first());

@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto')
+
+body
+    margin: 0
+    font-family: 'Roboto', sans-serif
+
+header
+    .header-top
+        padding: 0 10px
+        background: #f8f8f8
+        display: flex
+        justify-content: space-between
+
+        align-items: center
+        
+    .hamburger
+        
+        padding: 0px
+        margin: 0px
+
+    img
+        height: 20px
+        width: 20px
+        filter: invert(50%)
+        border: 1px solid rgba(0,0,0, .4)
+        border-radius: 4px
+        padding: 5px 10px
+        margin: 5px
+
+    a
+        text-decoration: none
+        color: #1caa98
+        font-weight: bold
+        line-height: 50px
+        letter-spacing: .1em
+    .nav-bar
+        display: none
+    @media screen and (min-width: 900px)
+        .hamburger
+            display: none
+        
+        .nav-bar
+            ul
+                display: inline
+                text-decoration: none
+
+    
+
+main
+    background-color: white
+
+    .app-store
+        padding: 30px
+        background-color: #1b222a
+        color: white
+        display: flex
+        flex-direction: column
+        align-items: center
+
+        h1
+            color: white
+            font-size: 2.5em
+            font-weight: bold
+        
+            .text-green
+                color: #1caa98
+        p
+            color: white
+            width: 80%
+            text-align: center
+            font-size: 1.2em
+        img 
+            padding: 7px 0
+
+        @media screen and (min-width: 580px)
+            flex-direction: row
+            flex-wrap: wrap
+            background-image: url("../model/images/site_showcase_bg.jpg")
+            background-size: cover
+            
+        p
+            text-align: left
+        img:first-of-type
+            padding-right: 20px
+
+    .news
+        padding: 50px 0
+        display: flex
+        flex-direction: column
+        align-items: center
+        width: 100%
+
+        article
+            padding: 10px
+            width: 90%
+            img 
+                max-width: 100%
+                border: 1px solid rgba(0,0,0, .2)
+            a 
+                color: rgba(0,0,0, .7)
+                text-decoration: none
+                border: 1px solid rgba(0,0,0, .2)
+                border-radius: 5px
+                padding: 5px 10px
+
+    .features
+        background: #1caa98
+        padding: 35px 45px
+        h1
+            color: white
+            font-size: 1.5em
+        ul
+            list-style: none
+            padding-left: 0
+            li
+                font-size: 1.2em
+                color: white
+                font-weight: bold
+                padding-bottom: 15px
+                img
+                    height: 15px
+                    filter: invert(100%)
+
+footer
+    background: #333333
+    padding: 20px 0
+    p
+        color: white
+        text-align: center
+        line-height: 50px
+    ul
+        list-style: none
+        padding-left: none
+        display: flex
+        justify-content: center
+        li
+            a
+                text-decoration: none
+                color: white
+                font-size: .8em
+                font-weight: bold
+                padding: 0 10px
+
+    @media screen and (min-width: 580px)
+    padding: 20px
+    ul
+        justify-content: flex-start
+    p 
+        text-align: right
+
+

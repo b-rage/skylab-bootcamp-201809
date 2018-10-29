@@ -1,0 +1,47 @@
+body{
+    background-color: #221e1e;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    text-align: center;
+    width: 40vw;
+    background-color: #e9ecef;
+}
+
+.wrapper{
+    width: 40vw;
+    height: 60vh;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: row;
+}
+
+.form-control{
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn-block+.btn-block {
+     margin-top: 0; 
+}
+
+#root {
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-top: 30vh;
+}
+
+
+
+
+
+.btn{
+    border-color: #e9ecef;
+}

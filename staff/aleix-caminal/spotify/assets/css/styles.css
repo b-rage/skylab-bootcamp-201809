@@ -1,0 +1,203 @@
+body .current-song__image *, body .main .panel__body .container__image * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+body .footer .control__button {
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 52px;
+}
+body .footer .control__button:hover {
+  background-color: #363e39;
+  cursor: pointer;
+}
+body .footer .control__button:focus {
+  outline: 0;
+}
+body .footer .control__button:active {
+  border-color: #6c0;
+  color: #6c0;
+  outline: 0;
+}
+
+body .current-song__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 10px;
+}
+body .current-song__text h1 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body .current-song__text p {
+  margin: 0;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+body {
+  display: grid;
+  grid-template-rows: calc(100vh - 80px) 80px;
+  margin: 0;
+  background-color: #28302b;
+  color: #ffffff;
+  font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+}
+body .main {
+  grid-row: 1;
+  background-color: #363e39;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+body .main .search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+body .main .search .form {
+  width: 60%;
+}
+body .main .search__title {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+body .main .search__input {
+  width: 100%;
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  font-size: 24px;
+  background-color: #28302b;
+  color: #ffffff;
+}
+body .main .search__input:focus {
+  outline: 0;
+}
+body .main .panel {
+  display: flex;
+  flex-direction: column;
+}
+body .main .panel__title {
+  height: 60px;
+  margin: 20px 2rem 0;
+  line-height: 60px;
+  font-size: 38px;
+  font-weight: 400;
+}
+body .main .panel__body {
+  display: grid;
+  grid-auto-rows: min-content;
+  grid-gap: 1.5rem;
+  padding: 0 1.5rem;
+  min-width: 320px;
+}
+body .main .panel__body .container {
+  min-width: 0;
+}
+body .main .panel__body .container__image {
+  position: relative;
+  padding-bottom: 100%;
+  margin-bottom: 0.25rem;
+  width: 100%;
+  height: 0;
+}
+body .main .panel__body .container__image * {
+  border-radius: 0.75rem;
+  cursor: pointer;
+}
+body .main .panel__body .container__title {
+  margin: 0 0 0 0.25rem;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+body .main .panel__body .container__title--small {
+  font-size: 12px;
+}
+body .footer {
+  display: grid;
+  grid-template-columns: 240px 1fr 240px;
+  background-color: #1e2421;
+}
+body .footer .control {
+  grid-column: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-height: 80px;
+}
+body .footer .player {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem 0;
+  max-height: 80px;
+}
+body .footer .player__bar {
+  order: -1;
+  align-self: flex-end;
+  width: 100%;
+  height: 4px;
+  background: #111;
+  border-radius: 5px;
+  cursor: pointer;
+}
+body .footer .player__bar > span {
+  display: block;
+  height: 100%;
+  border-radius: 2px;
+  background-color: #6c0;
+  overflow: hidden;
+}
+body .footer .player__time {
+  align-self: flex-start;
+  margin-top: 0.25rem;
+  font-size: 14px;
+}
+body .current-song {
+  grid-column: 3;
+  display: grid;
+  grid-template-columns: 80px auto;
+  max-height: 80px;
+}
+body .current-song__image {
+  position: relative;
+  width: 60px;
+  height: 0;
+  margin: 10px;
+  padding-bottom: 60px;
+}
+body .current-song__image * {
+  border-radius: 0.5rem;
+}
+body .current-song__text {
+  max-width: 190px;
+}
+
+/*# sourceMappingURL=styles.css.map */

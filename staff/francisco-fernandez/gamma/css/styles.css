@@ -1,0 +1,137 @@
+html, body {
+  height: 100vh; }
+
+body {
+  margin: 0px; }
+
+* {
+  box-sizing: border-box; }
+
+ul {
+  margin: 0; }
+
+body {
+  font-family: "Roboto", sans-serif; }
+
+.upheader {
+  display: flex;
+  justify-content: space-between;
+  background-color: #F8F8F8; }
+
+.upheader__title {
+  width: 80%;
+  color: #1CAA98;
+  margin: 15px 0px 15px 15px;
+  font-weight: bold; }
+
+.upheader__burger {
+  width: 42px;
+  height: 35px;
+  border: 1px solid #DDDDDD;
+  border-radius: 3px;
+  padding-top: 3px;
+  margin-top: 8px;
+  margin-right: 15px;
+  visibility: visible; }
+  @media screen and (min-width: 900px) {
+    .upheader__burger {
+      visibility: hidden;
+      size: 0; } }
+
+.burger--div {
+  width: 20px;
+  height: 2px;
+  background-color: #888888;
+  margin-top: 5px;
+  margin-left: 10px; }
+
+.downheader {
+  background-color: #1CAA98;
+  padding: 15px 0px;
+  display: flex; }
+
+.downheader__title {
+  margin: 0px 0px 0px 15px;
+  color: white;
+  font-size: 200%; }
+
+.introduction {
+  margin-top: 50px; }
+
+.introduction__title, .introduction__title--paragraph {
+  margin-left: 15px; }
+
+.introduction__title--paragraph {
+  margin-right: 15px;
+  text-align: justify; }
+
+.collapsible {
+  margin: 5px 15px;
+  border: 1px solid #DDDDDD;
+  border-radius: 5px; }
+
+.collapsible__up {
+  width: 100%;
+  background-color: #F8F8F8;
+  border-bottom: 1px solid #DDDDDD;
+  padding-bottom: 10px;
+  padding-top: 10px; }
+
+.collapsible__button {
+  margin-left: 15px;
+  font-weight: 600; }
+
+.collapsible__p {
+  margin-left: 15px; }
+
+.image--section {
+  margin-right: 15px; }
+
+.image--box {
+  display: flex;
+  width: 97%;
+  height: 100%;
+  border: 1px solid #DDDDDD;
+  margin: 15px; }
+
+.image {
+  display: flex;
+  width: 100%;
+  height: 100%; }
+
+.readmore {
+  margin-left: 15px;
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  padding: 7px; }
+
+.footer--up {
+  background-color: #1CAA98;
+  color: #FFFFFF;
+  padding-bottom: 40px; }
+
+.footer--up__title {
+  padding-top: 40px;
+  margin-left: 40px;
+  font-size: 200%; }
+
+.footer--up__li {
+  margin-left: 30px;
+  font-size: 150%; }
+
+.logo {
+  margin-left: 40px; }
+
+.footer--down {
+  background-color: #333333;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 85%;
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
+.footer--menu__li {
+  display: inline-block;
+  margin: 5px; }
+
+/*# sourceMappingURL=styles.css.map */

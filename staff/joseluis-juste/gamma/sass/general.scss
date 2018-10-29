@@ -1,0 +1,32 @@
+.wrap{
+    margin: 0 auto;
+    max-width: 1400px;
+    position: relative;
+}
+
+body{
+    background-color: $body__background-color;
+}
+
+.show-menu{
+    right: 0 !important;
+    opacity: 1 !important;
+}
+
+.block-scroll{
+    overflow-y: hidden;
+    height: 100vh;
+}
+
+.main__title{
+    background-color: #1caa98;
+    color: white;
+    font-weight: bold;
+    padding: 1rem 1rem;
+    font-size: 2.2em;
+    margin: 0;
+}
+
+
+
+

@@ -1,0 +1,44 @@
+.panel{
+    padding: 4em;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-around;
+}
+
+.red{
+    color:red !important;
+}
+
+.block{
+    display: block;
+}
+
+.panel__main-section{
+
+    & .panel__section-list{
+        width: 35%;
+        & ul{
+            list-style: none;
+            margin:0;
+            padding: 0;
+            & li{
+                width: 72%;
+                padding: 1em 0;
+                border-bottom: 1px solid rgba(0,0,0,0.2);
+                &:hover{
+                    cursor: pointer;
+                    color: white;
+                }
+                &:last-child{
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+    
+    & .panel__section-detail{
+        width: 43%;
+    }
+}

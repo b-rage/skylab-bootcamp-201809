@@ -1,0 +1,344 @@
+$background-color: white
+$font: Arial
+$primary-color: #00B19A
+$secondary-color: #333333 
+
+body 
+    padding: 0
+    margin: 0
+
+main
+    ºdisplay: block
+
+a
+    font-family: Arial
+    font-size: 13px  
+    padding: 10px 
+    color: #fff
+    text-decoration: none
+
+.btn
+    height: 40px
+    padding-left: 20px
+    padding-right: 20px
+    border-radius: 7px
+    background-color: white
+    color: $secondary-color
+    font-family: $font
+    font-weight: 800
+    font-size: 0.9em
+    border: 1px solid #ccc  
+ 
+
+.header
+    background-color: $background-color
+    font-family: $font
+    border: 1px solid gray
+    color: $primary-color
+    height: 50px
+    width: 100%
+    padding-bottom: 15px
+
+    &__container
+        width: 80%
+        margin: auto
+
+.top-container
+    height: 550px
+    background-image: url('./images/site_showcase_bg.jpg')
+    padding: 0
+    padding-top: 30px
+
+    .content-container
+            width: 80%
+            margin: auto
+            display: flex
+            justify-content: flex-start
+            &__rigth
+                padding: 0
+                height: 600px
+                display: block
+                @media (max-width: 1170px)
+                    display: none               
+                img 
+                    height: 87%
+                    margin-top: 28px
+            &__left
+                margin-right: 20px
+                padding-top: 40px
+                width: 500px
+                @media (max-width: 670px)
+                    display: block
+                    text-align: center
+                    padding-top: 10px
+                .content-text
+                    &__article 
+                        font-size: 22px
+                        color: white
+                        font-family: $font
+                        @media (max-width: 670px)
+                        font-size: 18px
+                    &__title 
+                        font-size: 60px
+                        color: white
+                        font-family: $font
+                        @media (max-width: 670px)
+                            font-size: 40px
+                    #life-title
+                        color: $primary-color
+
+
+                .content-stores-img img
+                    padding-right: 10px
+                    @media (max-width: 670px)
+                        padding-right: 0px
+                        padding-bottom: 20px
+                    @media (max-width: 450px)
+                        padding-right: 0px
+                        padding-bottom: 20px
+
+.middle-container
+    margin-top: 20px
+    padding-bottom: 20px
+
+.cards-container
+    width: 80%
+    margin: auto
+    display: flex
+    justify-content: space-between
+    @media (max-width: 1480px)
+        width: 80%
+        display: flex
+        justify-content: space-arond
+    @media (max-width: 1200px)
+        width: 95%
+        display: flex
+        justify-content: space-arond
+    @media (max-width: 900px)
+        display: flex
+        justify-content: space-arond
+        width: 95%
+        display: block
+        text-align: center
+        align-items: center
+    @media (max-width: 450px)
+        width: 90%
+        display: block       
+    .cards-container__card
+        margin-top: 20px
+        margin-bottom: 20px
+        margin-right: 20px
+        max-width: 400px
+        @media (max-width: 1200px)
+            text-align: left
+            margin: auto
+            margin-top: 20px
+            margin-bottom: 20px 
+        @media (max-width: 750px)
+            text-align: left
+            width: 100%
+            margin-top: 20px
+            margin-bottom: 20px              
+        .card-img
+            border: 1px solid #ccc
+            width: 100%
+        .card-title
+            font-family: $font 
+            font-size: 32px 
+            color: $secondary-color 
+        .card-text
+            font-family: $font
+            font-size: 14px 
+            color: $secondary-color
+            line-height: 1.4
+            margin-top: -10px
+        .btn--card-btn
+            @extend .btn
+
+
+.bottom-container
+    width: 100%
+    background-color: $primary-color
+    &__content
+        width: 80%
+        padding-top: 40px
+        padding-bottom: 40px
+        margin: auto
+        display: flex
+        justify-content: space-around
+        @media (max-width: 900px)
+            display: block
+        .content-left
+            @media (max-width: 900px)
+            padding-bottom: 40px
+            &_title
+                font-family: $font
+                list-style: none
+                font-size: 32px 
+                color: white
+            &_list
+                list-style-type: none
+                line-height:40px
+                margin: 0
+                padding: 0
+                font-family: $font
+                color: white
+                font-size: 23px
+footer 
+    background-color: $secondary-color
+    width: 100%
+    .footer-container
+        display: flex
+        justify-content: space-between
+        width: 80%
+        margin: auto
+        @media (max-width: 730px)
+            margin-top: 0px
+            display: block
+            text-align: center
+        &__left
+            .footer-menu
+                padding: 20px 0px
+                color: white
+                .footer-menu__item
+                    display: inline
+        &__rigth
+            color: white
+            font-family: $font
+            font-size: 13px 
+            padding: 20px 0px          
+
+
+
+.title-about
+    width: 100%
+    background-color: $primary-color
+    padding-top: 5px
+    padding-bottom: 5px
+    text-align: left
+    margin: auto
+    .title-about__container
+        width: 90%
+        margin: auto
+        .h1-about
+            font-family: $font
+            color: white
+ 
+
+.header__container--about
+    width: 90%
+    margin: auto
+    
+
+.top-container--about
+    @extend .top-container
+    background-image: none
+    padding-bottom: auto
+    height: auto
+
+.content-container--about
+    width: 90%
+    display: flex
+    justify-content: space-between
+    margin: auto
+    @media (max-width: 1200px)
+            display: block
+            padding-top: 10px
+            margin: auto
+            width: 97%
+    .content-container__left--about
+        margin-right: 20px
+        padding-top: 40px
+        max-width: 650px
+        @media (max-width: 1200px)
+            padding-top: 10px
+            margin: auto
+        @media (max-width: 670px)
+            padding-top: 10px
+            margin: auto
+            width: 100%
+    .content-container__rigth--about
+        width: 34%
+        @media (max-width: 1200px)
+            width: 60%
+            display: block
+            padding-top: 10px
+        @media (max-width: 600px)
+            width: 90%
+            display: block
+            padding-top: 10px
+        .cards-container--about
+        @extend .cards-container
+
+.card-text--about
+    font-family: $font
+    font-size: 14px 
+    color: $secondary-color
+    line-height: 1.4
+    margin-top: -10px
+
+.card-title--about
+    font-family: $font 
+    font-size: 32px 
+    color: $secondary-color 
+    margin-top: -10px
+
+.collapsible-title
+    font-family: $font 
+    font-size: 16px 
+    color: $secondary-color 
+    background-color: #F5F5F5
+    padding: 20px 0px 13px 20px
+    border: 1px solid #ccc
+    border-radius: 5px 5px 0px 0px
+
+.collapsible-text
+    font-family: $font 
+    font-size: 14px 
+    color: $secondary-color 
+    border: 1px solid #ccc
+    padding: 20px 10px 15px 20px
+    line-height: 1.4
+    margin-top: -22px
+    margin-bottom: 22px
+    border-radius: 0px 0px 5px 5px
+
+.collapsible-title-2
+    @extend .collapsible-title
+    border-radius: 5px 5px 5px 5px
+    margin-top: -15px
+    
+.footer-container--about
+        display: flex
+        justify-content: space-between
+        width: 80%
+        margin: auto
+        @media (max-width: 730px)
+            margin-top: 0px
+            display: block
+            text-align: center
+
+
+.contact-form
+    font-family: $font
+    font-size: 12px
+    font-weight: bold
+
+input
+    width: 100%
+    padding: 7px 10px
+    margin: 8px 0
+    display: inline-block
+    border: 1px solid #ccc
+    border-radius: 4px
+    box-sizing: border-box
+
+.submit
+    width: 72px
+    padding: 5px 10px 5px 10px
+    display: inline-block
+    border: 1px solid #ccc
+    border-radius: 4px
+    box-sizing: border-box
+
+

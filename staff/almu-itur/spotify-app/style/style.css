@@ -1,0 +1,32 @@
+ul {
+    list-style: none;
+  }
+
+h1 {
+    display: inline-block;
+    color: white;
+    font-size: 3em;
+}
+h2 {
+    padding: 1em;
+    
+  }
+
+.player {
+    margin-left: 250px;  
+}
+
+.imgArtist{
+    width: 100%;
+    display: inline-block;
+    background-color:#343a40;
+    color: white;
+}
+
+.imgAlbum {
+    background-color:#343a40;
+}
+
+img {
+    margin: 1em;
+}

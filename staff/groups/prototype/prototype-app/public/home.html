@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>SMDb</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
+  <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
+</head>
+<body>
+  <header>
+    <section class="navbar bg-gray">
+      <div class="container">
+        <div class="nav-menu">
+          <input class="menu-btn" type="checkbox" id="menu-btn" />
+          <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+          <ul class="menu">
+            <li><a href="#work">Home</a></li>
+            <li><a href="#about">Now playing</a></li>
+            <li><a href="#contact">Popular</a></li>
+          </ul>
+        </div>
+        <div class="logo">
+          <span>SM</span>
+          <span>Db</span>
+        </div>
+        <div class="sign">
+          <a href="#">Sign In</a> or <a href="#">Log In</a>
+        </div>
+      </div>
+    </section>
+  </header>
+  <section class="slide">
+    <div class="container">
+      <div class="row">
+        <img class="img-fluid" src="https://dummyimage.com/1140x250/707070&text=+" alt="collage">
+        <div class="search">
+          <h2>Search, save, vote <br> and much more</h2>
+          <form action="">
+            <input type="text" placeholder="Write a movie..." spellcheck="false">
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+        <div class="row">
+          <h5>Now Playing</h5>
+        </div>
+      <div class="row carousel">
+        <div>
+          <img src="https://dummyimage.com/240x360/707070&text=1" />
+        </div>
+        <div>
+          <img src="https://dummyimage.com/240x360/707070&text=2" />
+        </div>
+        <div>
+          <img src="https://dummyimage.com/240x360/707070&text=3" />
+        </div>
+        <div>
+          <img src="https://dummyimage.com/240x360/707070&text=4" />
+        </div>
+        <div>
+          <img src="https://dummyimage.com/240x360/707070&text=5" />
+        </div>
+        <div>
+          <img src="https://dummyimage.com/240x360/707070&text=6" />
+        </div>
+        <div>
+          <img src="https://dummyimage.com/240x360/707070&text=7" />
+        </div>
+        <div>
+          <img src="https://dummyimage.com/240x360/707070&text=8" />
+        </div>
+        <div>
+          <img src="https://dummyimage.com/240x360/707070&text=9" />
+        </div>
+        <div>
+          <img src="https://dummyimage.com/240x360/707070&text=10" />
+        </div>
+        <div>
+          <img src="https://dummyimage.com/240x360/707070&text=11" />
+        </div>
+        <div>
+          <img src="https://dummyimage.com/240x360/707070&text=12" />
+        </div>
+        <div>
+          <img src="https://dummyimage.com/240x360/707070&text=13" />
+        </div>
+        <div>
+          <img src="https://dummyimage.com/240x360/707070&text=14" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script>
+    $(document).ready(function() {
+        $('.carousel').slick({
+          infinite: true,
+          arrows: false,
+          centerMode: true,
+          centerPadding: '60px',
+          slidesToShow: 4,
+          slidesToScroll: 6,
+          responsive: [
+          {
+            breakpoint: 990,
+            settings: {
+              slidesToShow: 1,
+            }
+          }]
+        })
+      })
+  </script>
+</body>
+</html>

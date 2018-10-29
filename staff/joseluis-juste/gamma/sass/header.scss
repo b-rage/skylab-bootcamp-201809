@@ -1,0 +1,134 @@
+.header{
+
+    background-color: $header__background-color;
+   
+    & .header__nav{
+        padding: 1.3em;
+        background-color: $nav__background-color;
+        display: flex;
+        justify-content: space-between;
+        & .header__nav__title{
+            color:$green;
+        }
+        & .header__nav__menu{
+            position: fixed;
+            background-color: $background__color__menu__lateral;
+            width: 50%;
+            height: 100vh;
+            right: -50%;
+            top: 0;
+            transition: right 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            opacity: 0;
+            padding: 0 1.5em;
+            z-index: 50;
+            overflow: scroll;
+            & li
+            {
+                &:first-child{
+                    font-size: 2em;
+                    padding: 0;
+                    border-bottom: none;
+                    text-align: right;
+                    padding-top: 23px;
+                    
+                }
+                &:nth-child(2){
+                   a{
+                    color: $green;
+                    font-weight: bold;
+                    font-size: 1.5em;
+                   }
+                  
+                }
+               padding: 2em 0;
+               border-bottom: 1px solid $color__border-bottom;
+               &:last-child{
+                   border-bottom: 0;
+               }
+                & a{
+                    text-decoration: none;
+                    color:$color__border-bottom;
+                    display: block;
+                    text-align: center;
+                }
+            }
+        }
+        & .icon-bars{
+            font-size: 2em;
+            
+        }
+    } 
+      
+}
+
+/*@media screen and (min-width: 580px){
+    
+    .header__nav__menu{
+        overflow: scroll;
+    }
+}
+*/
+
+@media screen and (min-device-width: 900px){
+
+    .header{
+        & .header__nav{
+            padding:0;
+            display: block;
+            & .icon-bars{
+                display: none;
+            }
+            & .header__nav__title{
+                display: none;
+            }
+            & .header__nav__menu{
+                display: block;
+                font-size: 0.8em;
+                position: static;
+                opacity: 1;
+                width: auto;
+                padding-left: 5em;
+                background-color: $nav__background-color;
+                height: auto;
+                & li{
+                    display: inline-block;
+                    height: auto;
+                    padding: 2em 1em;
+                    border-bottom: none;
+                    line-height: 15px;
+                    &:first-child{
+                        display: none;                  
+                    }
+                    &:nth-child(n + 3):hover{
+                        background-color: $background__color__menu__lateral;
+                    }
+                    & a{
+                        display: block;
+                        text-decoration: none;
+                        color: $color__border-bottom;
+                        height:100%;
+                        font-weight: bolder;
+
+                    }
+                }
+            }
+            & .header__nav__menu-icon{
+                display: none;
+            }
+        }
+    }
+         
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

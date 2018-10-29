@@ -1,0 +1,30 @@
+.artists, .albums, .songs, .audio, .card-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style-type: none; }
+
+.audio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.card text-center {
+  list-style-type: none;
+  border-color: transparent;
+  background-color: black; }
+
+ul {
+  text-decoration: none;
+  list-style-type: none;
+  border-color: transparent; }

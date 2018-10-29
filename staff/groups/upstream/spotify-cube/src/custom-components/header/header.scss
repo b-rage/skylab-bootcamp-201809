@@ -1,0 +1,31 @@
+.header{
+   
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+    position: relative;
+    font-size: 30px;
+    text-shadow: 2px 2px #181200;
+    & .header__logo{
+        .logo {
+            display: inline-block;
+            color: rgb(255, 193, 7);
+            font-weight: 700;
+       }
+       .img-logo {
+        height: 50px;
+        width: 60px;
+       }
+        
+    }
+    & .header__audio{
+        display: inline-block;
+        position: absolute;
+        width: 300px;
+        top: 12px;
+        right: 18px;
+        
+    }
+}

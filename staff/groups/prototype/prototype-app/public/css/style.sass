@@ -1,0 +1,279 @@
+body
+  font-family: "Roboto", sans-serif
+  font-size: 16px
+  background-color: #F3F3F3
+  color: #707070
+
+.bg-gray
+  background-color: #E0E0E0
+
+.navbar
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+    overflow: hidden
+    background-color: #F3F3F3
+    font-size: 22px
+
+  li a
+    display: block
+    padding: 20px 20px
+    text-decoration: none
+
+  li a:hover,
+  .menu-btn:hover 
+    background-color: #aeaeae
+
+  .menu
+    position: absolute
+    margin-top: 8px
+    // top: 50px
+    left: 0
+    width: 100%
+    text-align: center
+    max-height: 0
+    transition: max-height .2s ease-out
+    z-index: 10
+
+  .menu-icon
+    cursor: pointer
+    display: inline-block
+    margin-top: 10px
+    padding: 10px 8px
+    position: relative
+    user-select: none
+
+  .menu-icon .navicon
+    background: #707070
+    display: block
+    height: 2px
+    position: relative
+    transition: background .2s ease-out
+    width: 18px
+
+  .menu-icon .navicon:before,
+  .menu-icon .navicon:after
+    background: #707070
+    content: ''
+    display: block
+    height: 100%
+    position: absolute
+    transition: all .2s ease-out
+    width: 100%
+
+  .menu-icon .navicon:before
+    top: 5px
+
+  .menu-icon .navicon:after
+    top: -5px
+
+  .menu-btn
+    display: none
+
+  .menu-btn:checked ~ .menu
+    max-height: 300px
+
+  .menu-btn:checked ~ .menu-icon .navicon
+    background: transparent
+
+  .menu-btn:checked ~ .menu-icon .navicon:before
+    transform: rotate(-45deg)
+
+  .menu-btn:checked ~ .menu-icon .navicon:after
+    transform: rotate(45deg)
+
+  .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after
+    top: 0
+
+  .logo
+    font-size: 18px
+    font-weight: bold
+    line-height: 18px
+    text-align: center
+
+  .logo > span
+    display: block
+
+  .profile
+    max-width: 40px
+
+    img
+      border-radius: 25px
+
+.search
+  width: 100%
+  text-align: center
+  margin-top: -170px 
+  padding: 0 20px
+
+  h2
+    margin: 10px 0 40px
+    font-size: 32px
+    font-weight: bold
+    color: #ffffff
+
+  input
+    overflow: visible
+    width: 100%
+    max-width: 700px
+    padding: 20px 30px
+    text-align: center
+    color: #bdbdbd
+    border: none
+    border-radius: 16px
+    font-size: 28px
+
+  input:focus
+    outline: 0 none
+
+  input::placeholder
+    color: #bdbdbd
+
+.form-signin
+  width: 100%
+  max-width: 330px
+  padding: 15px
+  margin: 40px auto
+
+  .checkbox 
+    font-weight: 400
+
+  .form-control 
+    position: relative
+    box-sizing: border-box
+    height: auto
+    padding: 10px
+    font-size: 16px
+
+  .form-control:focus
+    box-shadow: none
+    border-color: #707070
+    z-index: 2
+
+  input 
+    margin-bottom: -2px
+    border-radius: 0
+
+  input:first-of-type 
+    margin-bottom: -1px
+    border-top-right-radius: .25rem
+    border-top-left-radius: .25rem
+
+  input:last-of-type 
+    margin-bottom: 10px
+    border-bottom-left-radius: .25rem
+    border-bottom-right-radius: .25rem
+
+.row-move
+    position: absolute 
+    top: 38%
+    left: 16%
+.movies-carousel
+  margin: 50px 0
+
+.carousel-img
+  margin: 0 15px
+  max-width: 240px
+  
+.img-medium-rounded
+  border-radius: 18px
+
+.list-movies .movie
+  margin: 20px
+
+  img
+    max-width: 240px
+
+.footer
+  line-height: 50px
+  text-align: center
+
+.logout, .logout:hover, .logo-div, .logo-div:hover
+  color: #707070
+  text-decoration: none
+
+.backdrop
+  border-bottom-right-radius: 20px
+  border-bottom-left-radius: 20px
+.title-poster
+  width: 100%
+  text-align: center
+  margin-top: -20px 
+  max-width: 550px
+  padding: 20px 30px
+  border-radius: 16px
+  background-color: #F3F3F6
+  position: relative
+  h2
+    margin: 10px 0 40px
+    font-weight: bold
+    color: #707070
+.div-backdrop
+  position: relative
+.arrow
+  position: absolute
+  top: 35px
+  left: 0
+  font-size: 1.5em
+  font-weight: 1000
+.poster-col
+  margin-top: -50px
+.poster
+  border-radius: 16px
+.info-col span, p
+    margin: 16px 0
+.icons-row1, .icons-row2
+  font-size: 1.5em
+.warning
+  font-size: small
+  color: red
+.sinopsis-text
+  max-width: 290px
+.cast-title-row
+  margin-top: 2em
+.cast-row
+  display: flex
+  flex-wrap: wrap
+  flex-direction: row
+  div
+    margin: 0 1em
+    img, p
+      margin: 0.5em 0
+    p
+      width: 5em
+    img 
+      border-radius: 50px
+.clicked
+  color: green
+  font-weight: bold
+  
+.data-profile
+  max-width: 500px
+
+.tmdb img
+  margin-left: 8px
+  max-width: 35px
+
+.copy span
+  font-size: 1.5em
+  font-weight: bold
+
+.slide img
+  border-bottom-right-radius: 18px
+  border-bottom-left-radius: 18px
+
+.slick-prev, .slick-next
+  width: 30px
+  height: 30px
+
+.slick-prev
+    left: -35px
+
+.slick-next
+    right: -35px
+
+.slick-prev:before, .slick-next:before
+  font-size: 28px
+  color: #707070

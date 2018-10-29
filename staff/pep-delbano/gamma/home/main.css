@@ -1,0 +1,143 @@
+/*cd Desktop\CMDER\bootcamp\collab\skylab-bootcamp-201809\staff\pep-delbano\gamma\home*/
+ * /* sass --watch main.sass:main.css */
+ *
+ * /*Variables */
+html {
+  flex-wrap: nowrap;
+  height: 100vh;
+  width: 100vw;
+  margin: 0; }
+  html body {
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    font-family: Arial;
+    color: #f8f8f8; }
+  html .navbar-section {
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f8f8;
+    color: #1b222a; }
+    html .navbar-section .navbar-visible {
+      display: flex;
+      justify-content: space-between;
+      height: 50px;
+      cursor: pointer; }
+    html .navbar-section .title--navbar {
+      display: inline-block;
+      font-size: 20px;
+      font-weight: 700;
+      color: #1caa98;
+      margin: 15px 0 15px 17px; }
+    html .navbar-section .menu-icon {
+      width: 50px;
+      height: 40px;
+      margin: 20px 20px 0 0;
+      right: 20px; }
+    html .navbar-section #menu-toggle {
+      display: none; }
+    html .navbar-section .navbar-collapse {
+      list-style-type: none;
+      text-align: center;
+      overflow: hidden;
+      max-height: 0;
+      -webkit-transition: all 0.5s ease; }
+      html .navbar-section .navbar-collapse li:first-child {
+        display: none; }
+      html .navbar-section .navbar-collapse li {
+        padding: 5px;
+        font-size: 20px;
+        font-weight: 700; }
+      html .navbar-section .navbar-collapse li:hover {
+        background-color: #7fdbcf; }
+      html .navbar-section .navbar-collapse a {
+        text-decoration: none;
+        color: silver; }
+    html .navbar-section #menu-toggle:checked + .navbar-collapse {
+      max-height: 120px; }
+  html .first-section {
+    display: flex;
+    flex-direction: column;
+    background-color: #1b222a;
+    text-align: center;
+    align-items: center;
+    padding: 20px 0; }
+    html .first-section .header {
+      font-size: 35px;
+      display: inline-block;
+      margin: 10px auto; }
+      html .first-section .header span {
+        color: #1caa98; }
+    html .first-section p {
+      font-size: 20px;
+      padding: 10px 25px; }
+    html .first-section .img-1, html .first-section .img-2 {
+      width: 250px; }
+  html .first-section--img-phone-right, html .first-section--bg {
+    display: none; }
+  html .second-section {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    color: #333334;
+    padding: 30px 5px;
+    font-size: 15px;
+    margin-bottom: 20px; }
+  html .img {
+    border: 1px solid gray;
+    width: 95%;
+    margin: auto;
+    padding: 3px; }
+  html .header {
+    padding: 20px 0 0 5px;
+    font-size: 30px; }
+  html .p {
+    padding: 10px 5px;
+    color: black; }
+  html .button {
+    width: 100px;
+    padding: 4px;
+    font-size: 15px;
+    border: 1px solid gray;
+    text-align: center;
+    border-radius: 3px; }
+  html footer {
+    display: flex;
+    flex-direction: column;
+    background-color: #333334; }
+  html .third-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 30px 0;
+    background-color: #1caa98;
+    color: white; }
+    html .third-section .header {
+      font-size: 33px;
+      padding-left: 40px; }
+    html .third-section p {
+      font-size: 20px;
+      margin-left: 40px; }
+    html .third-section span {
+      font-weight: 800; }
+    html .third-section img {
+      max-width: 250px;
+      margin-left: 40px;
+      margin-bottom: 20px; }
+  html .fourth-section {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: #333334;
+    text-align: center;
+    padding: 30px 5px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 15px 10px 5px; }
+  html .footer-bottom {
+    text-align: center;
+    padding: 5px auto 10px auto; }
+
+/*# sourceMappingURL=main.css.map */

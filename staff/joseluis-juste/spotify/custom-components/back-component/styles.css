@@ -1,0 +1,21 @@
+.back {
+  padding: 1em; }
+  .back .header {
+    transform: rotateY(180deg); }
+  .back .back__albums-inf {
+    border: 1px solid white;
+    margin-top: 2em;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    transform: rotateY(180deg); }
+    .back .back__albums-inf .back__albums-inf__main-section {
+      justify-content: space-between;
+      display: flex;
+      padding: 1em 3em; }
+      .back .back__albums-inf .back__albums-inf__main-section .back__albums-inf__main-section__img-section {
+        width: 36%; }
+      .back .back__albums-inf .back__albums-inf__main-section .back__albums-inf__main-section__name-section {
+        max-width: 60%; }
+  .back .back__albums-list .list {
+    transform: rotateY(180deg); }

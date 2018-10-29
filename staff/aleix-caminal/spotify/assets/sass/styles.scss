@@ -1,0 +1,246 @@
+$color-primary: #6c0;
+$color-text: #ffffff;
+$color-bg1: #1e2421;
+$color-bg2: #28302b;
+$color-bg3: #363e39;
+$color-bg4: #424945;
+$header-height: 80px;
+
+%image-square {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+%button {
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    border: 4px solid $color-text;
+    border-radius: 50%;
+    background-color: transparent;
+    color: $color-text;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 52px;
+
+    &:hover {
+        background-color: $color-bg3;
+        cursor: pointer;
+    }
+
+    &:focus {
+        outline: 0;
+    }
+
+    &:active {
+        border-color: $color-primary;
+        color: $color-primary;
+        outline: 0;
+    }
+}
+
+%text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 10px;
+
+    h1 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 700;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    p {
+        margin: 0;
+        font-size: 14px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+body {
+    display: grid;
+    grid-template-rows: calc(100vh - #{$header-height}) $header-height;
+    margin: 0;
+    background-color: $color-bg2;
+    color: $color-text;
+    font-family: Whitney, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    overflow: hidden;
+
+    .main {
+        grid-row: 1;
+        background-color: $color-bg3;
+        overflow-x: hidden;
+        overflow-y: scroll;
+
+        .search {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+
+            .form {
+                width: 60%;
+            }
+
+            &__title {
+                margin: 0;
+                margin-bottom: 1rem;
+            }
+
+            &__input {
+                width: 100%;
+                border: none;
+                border-radius: 1rem;
+                padding: 1rem 2rem;
+                font-size: 24px;
+                background-color: $color-bg2;
+                color: $color-text;
+
+                &:focus {
+                    outline: 0;
+                }
+            }
+        }
+
+        .panel {
+            display: flex;
+            flex-direction: column;
+
+            &__title {
+                height: 60px;
+                margin: 20px 2rem 0;
+                line-height: 60px;
+                font-size: 38px;
+                font-weight: 400;
+            }
+
+            &__body {
+                display: grid;
+                grid-auto-rows: min-content;
+                grid-gap: 1.5rem;
+                padding: 0 1.5rem;
+                min-width: 320px;
+
+                .container {
+                    min-width: 0;
+
+                    &__image {
+                        position: relative;
+                        padding-bottom: 100%;
+                        margin-bottom: .25rem;
+                        width: 100%;
+                        height: 0;
+
+                        * {
+                            @extend %image-square;
+                            border-radius: .75rem;
+                            cursor: pointer;
+                        }
+                    }
+
+                    &__title {
+                        margin: 0 0 0 .25rem;
+                        font-size: 14px;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+
+                        &--small {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    .footer {
+        display: grid;
+        grid-template-columns: 240px 1fr 240px;
+        background-color: $color-bg1;
+
+        .control {
+            grid-column: 1;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            max-height: $header-height;
+
+            &__button {
+                @extend %button;
+            }
+        }
+
+        .player {
+            grid-column: 2;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: .75rem 1.5rem 0;
+            max-height: $header-height;
+
+            &__bar {
+                order: -1;
+                align-self: flex-end;
+                width: 100%;
+                height: 4px;
+                background: #111;
+                border-radius: 5px;
+                cursor: pointer;
+
+                & > span {
+                    display: block;
+                    height: 100%;
+                    border-radius: 2px;
+                    background-color: $color-primary;
+                    overflow: hidden;
+                }
+            }
+
+            &__time {
+                align-self: flex-start;
+                margin-top: .25rem;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .current-song {
+        grid-column: 3;
+        display: grid;
+        grid-template-columns: $header-height auto;
+        max-height: $header-height;
+
+        &__image {
+            position: relative;
+            width: $header-height - 20px;
+            height: 0;
+            margin: 10px;
+            padding-bottom: $header-height - 20px;
+
+            * {
+                @extend %image-square;
+                border-radius: .5rem;
+            }
+        }
+
+        &__text {
+            @extend %text;
+            max-width: 190px;
+        }
+    }
+}

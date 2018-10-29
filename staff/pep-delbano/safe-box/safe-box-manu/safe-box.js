@@ -2,19 +2,18 @@
 
 //with this function, we can save 
 var safeBox = {
-
     saveSecret: function(secret, password) {
-        var sec = secret;
-            pass = password;
+        this.sec = secret;
+        this.pass = password;
+        
+
+
     },
 
     retrieveSecret: function(password) {
-        if(password === pass) {
-        return sec;
+        if(password === saveSecret.pass) {
+        return this.saveSecret.sec;
     }
 }
 
 
-safeBox("disismypassword", "disisasecret");
-
-safeBox("disisasecret");

@@ -1,0 +1,75 @@
+@import 'vendor/web-components/1.1.0/web-components.sass'
+
+$landing_color: skyblue
+$landing_title_color: white
+$landing_border-color: teal
+
+$register_color: gold
+$register_title_color: white
+$register_border-color: orange
+    
+$login_color: plum
+$login_title_color: white
+$login_border-color: purple
+
+$welcome_color: LightSeaGreen
+$welcome_title_color: white
+$welcome_border-color: turquoise
+
+.landing
+    @extend .panel
+
+    background-color: $landing_color
+    border-color: $landing_border-color
+
+    &__title
+        color: $landing_title_color
+    
+    &__button
+        padding: 10px
+        border-radius: 10px
+
+.register
+    @extend .panel
+
+    background-color: $register_color
+    border-color: $register_border-color
+
+    &__title
+        color: $register_title_color
+    
+    &__button
+        padding: 10px
+        border-radius: 10px
+    
+    &__input
+        padding: 10px
+        border-radius: 10px
+        display: block
+
+.login
+    @extend .panel
+
+    background-color: $login_color
+    border-color: $login_border-color
+
+    &__title
+        color: $login_title_color
+    
+    &__button
+        padding: 10px
+        border-radius: 10px
+    
+    &__input
+        padding: 10px
+        border-radius: 10px
+        display: block
+
+.welcome
+    @extend .panel
+
+    background-color: $welcome_color
+    border-color: $welcome_border-color
+
+    &__title
+        color: $welcome_title_color

@@ -1,0 +1,53 @@
+/* TODO implement styles from here following BEM */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 97vh;
+  background-color: #026aa7; }
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  min-width: 40vw;
+  min-height: 30vh;
+  border: 5px solid #000c1d; }
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 200px;
+  align-self: center;
+  margin: 0 auto; }
+
+input {
+  text-align: center; }
+
+button {
+  background-image: -webkit-linear-gradient(top, #EC6C53 0%, #EC6C53 50%, #E95C41 50%, #E95C41 100%);
+  border: 1px solid #50514B;
+  width: 14em; }
+
+.register-error__message {
+  padding: 2px;
+  color: #840000;
+  font-weight: normal;
+  border-bottom: 1px solid rgba(9, 45, 66, 0.13);
+  position: relative; }
+
+.dialog {
+  background-color: #32373c; }
+  .dialog__title {
+    color: #000c1d; }
+
+.panel {
+  color: #000c1d;
+  border: 5px solid #000c1d;
+  background-color: #32373c; }
+
+/*# sourceMappingURL=spa-components.css.map */

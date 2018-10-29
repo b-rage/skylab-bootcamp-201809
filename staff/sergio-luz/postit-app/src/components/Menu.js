@@ -1,0 +1,34 @@
+import React, { Component } from 'react'
+
+class Menu extends Component {
+    state = { text: '' }
+
+    handleInput = event => {
+        console.log('InputForm', 'handleInput (setState)')
+
+        const text = event.target.value
+
+        this.setState({ text })
+    }
+
+    handleSubmit = event => {
+        console.log('InputForm', 'handleSubmit (setState)')
+
+        event.preventDefault()
+
+        this.props.onSubmit(this.state.text)
+
+        this.setState({ text: '' })
+    }
+
+    render() {
+        console.log('InputForm', 'render')
+
+        return <form onSubmit={this.handleSubmit}>
+            <textarea value={this.state.text} placeholder="Write text here..." onChange={this.handleInput} />
+            <button type="submit">{'Create'}</button>
+        </form>
+    }
+}
+
+export default Menu

@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400");
+.panel, .welcome, .login, .register, .landing, .dialog, .alert, .confirm {
+  background-color: silver;
+  padding: 20px;
+  border-radius: 15px;
+  border: 5px solid gray;
+  font-family: Roboto;
+  font-weight: bold;
+}
+.panel__title {
+  color: gray;
+}
+
+.dialog, .alert, .confirm {
+  background-color: silver;
+  border-color: gray;
+}
+.dialog__title {
+  color: gray;
+}
+.dialog__body {
+  color: black;
+}
+
+.alert, .confirm {
+  background-color: #DEF2FC;
+  border-color: #4BC9F3;
+}
+.alert__title {
+  color: #177CBF;
+}
+.alert__body {
+  color: black;
+}
+.alert__button {
+  padding: 10px;
+  border-radius: 10px;
+}
+.alert--danger {
+  background-color: #FCDCCD;
+  border-color: #EA2631;
+}
+.alert--danger h2 {
+  color: #ED4C44;
+}
+
+.confirm__title {
+  color: #177CBF;
+}
+.confirm__button {
+  padding: 10px;
+  border-radius: 10px;
+}
+.confirm__button--accept {
+  background-color: darkgray;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.landing {
+  background-color: skyblue;
+  border-color: teal;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+.landing__title {
+  color: white;
+}
+.landing__button {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.register {
+  background-color: gold;
+  border-color: orange;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+.register__title {
+  color: white;
+}
+.register__button {
+  padding: 10px;
+  border-radius: 10px;
+}
+.register__input {
+  padding: 10px;
+  border-radius: 10px;
+  display: block;
+}
+
+.login {
+  background-color: plum;
+  border-color: purple;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+.login__title {
+  color: white;
+}
+.login__button {
+  padding: 10px;
+  border-radius: 10px;
+}
+.login__input {
+  padding: 10px;
+  border-radius: 10px;
+  display: block;
+}
+
+.welcome {
+  background-color: LightSeaGreen;
+  border-color: turquoise;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+.welcome__title {
+  color: white;
+}
+
+/*# sourceMappingURL=spa-components.css.map */

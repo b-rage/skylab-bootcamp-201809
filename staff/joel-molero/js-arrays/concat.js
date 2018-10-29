@@ -10,8 +10,6 @@ function concat(arr, arr2){
 
     if (arguments[1].length === 0) throw Error('second array should be contain elements');
 
-
-    
 for(x=0;x<arr.length;x++){
     arr3[x] = arr[x];
 }

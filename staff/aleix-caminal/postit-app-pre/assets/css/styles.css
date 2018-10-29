@@ -1,0 +1,139 @@
+body .main__boards .add, body .main__boards .board {
+  position: relative;
+  min-width: 240px;
+  max-width: 240px;
+  height: fit-content;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #dfe3e6;
+  border-radius: 1rem;
+}
+
+body .main__boards .board__input, body .main__boards .board .post {
+  width: -webkit-fill-available;
+  padding: 0.5rem;
+  background-color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0px 3px 5px -3px rgba(0, 0, 0, 0.75);
+}
+body .main__boards .board__input:focus, body .main__boards .board .post:focus {
+  outline: none;
+}
+
+body .main__boards .board .post__title, body .main__boards .board__title {
+  display: inline;
+  margin: 0;
+  font-size: 16px;
+  background-color: transparent;
+  border: none;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+body .main__boards .add__input, body .main__boards .board__title:focus {
+  width: -webkit-fill-available;
+  height: 20px;
+  margin: 0 0 0.5rem;
+  padding: 4px;
+  font-size: 14px;
+  color: #000;
+  background-color: #fff;
+  border: 2px solid #026aa7;
+  border-radius: 0.5rem;
+}
+body .main__boards .add__input:focus, body .main__boards .board__title:focus {
+  outline: 0;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: Helvetica Neue, Arial, Helvetica, sans-serif;
+}
+body .main {
+  display: grid;
+  grid-template-rows: 60px calc(100vh - 60px);
+  background-color: #026aa7;
+}
+body .main__title {
+  margin: 0;
+  text-align: center;
+  font-size: 48px;
+  line-height: 60px;
+  color: #fff;
+  background-color: #014a75;
+}
+body .main__boards {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  overflow-x: scroll;
+  min-width: 0;
+}
+body .main__boards .board__title {
+  height: 30px;
+  margin-bottom: 0.5rem;
+  color: #17394d;
+}
+body .main__boards .board .post {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+body .main__boards .board .post__title {
+  font-size: 14px;
+  font-weight: 400;
+}
+body .main__boards .board .post__button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 12px;
+  color: #333;
+  cursor: pointer;
+}
+body .main__boards .board .post__button:focus {
+  outline: 0;
+}
+body .main__boards .board__button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 12px;
+  color: #333;
+  cursor: pointer;
+}
+body .main__boards .board__button:focus {
+  outline: 0;
+}
+body .main__boards .add__button {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #5aac44;
+  box-shadow: 0px 3px 5px -3px #478736;
+  color: #fff;
+  font-size: 16px;
+  transition: all 0.1s linear;
+}
+body .main__boards .add__button:hover {
+  cursor: pointer;
+  background-color: #509a3d;
+}
+body .main__boards .add__button:focus {
+  outline: none;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,155 @@
+%login-buttons {
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    background: #1D976C;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #93F9B9, #1D976C);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #93F9B9, #1D976C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    cursor: pointer;
+    color: white;
+  }
+
+  %forms {
+    display: flex;
+    flex-direction: column;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center; 
+    height: 180px;
+  }
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #0052D4;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6FB1FC, #4364F7, #0052D4);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6FB1FC, #4364F7, #0052D4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.container {
+    width: 40%;
+    height: 500px;
+    border: 5px solid #D5DCF9;
+    border-radius: 10px;
+    margin: 200px auto;
+    box-shadow: 5px 10px #888888;
+}
+
+//LANDING PAGE
+.landing {
+    margin-top: 10%;
+    text-align: center;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    & > h2 {
+        color: white;
+        font-size: 3em;
+    }
+
+    &__button {
+        width: 50%;
+        height: 50px;
+        border-radius: 10px;
+        background: #4776E6;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        cursor: pointer;
+        font-size: 1.5em;
+        color: white;
+    }
+}
+
+//LOGIN
+
+.login {
+    margin-top: 10%;
+    text-align: center;
+    height: 300px;
+    display: flex;
+
+    & > h2{
+        color: white;
+        font-size: 3em;
+    }
+
+    & >p {
+        color: white;
+        font-size: 1.2em;
+    }
+
+    &__form {
+        @extend %forms
+
+    }
+
+    &__username, &__password {
+        width: 50%;
+        height: 30px;
+        border-radius: 5px;
+    }
+
+    &__button {
+        @extend %login-buttons;
+    }
+
+    &__back-to-register {
+        @extend %login-buttons;
+        margin-top: 3%;
+    }
+
+    &__error {
+        color: red;
+    }
+}
+
+//Register 
+
+.register {
+    margin-top: 10%;
+    text-align: center;
+    height: 400px;
+    display: flex;
+    & > h2 {
+        color: white;
+        font-size: 3em;
+    }
+
+
+    &__form {
+        @extend %forms;
+        margin-top: 50px;
+    }
+
+    &__email, &__fullname, &__username, &__password {
+        width: 50%;
+        height: 30px;
+        border-radius: 5px;
+    }
+
+    &__submit {
+        @extend %login-buttons;
+
+    }
+
+
+}
+
+//WELCOME
+
+.welcome {
+    vertical-align: center;
+    line-height: 500px;
+    & > h2 {
+        text-align: center;
+        color: white;
+        font-size: 2.5em;
+    }
+}

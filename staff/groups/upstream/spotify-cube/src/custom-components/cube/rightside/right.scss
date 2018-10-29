@@ -1,0 +1,32 @@
+.right{
+    padding: 1em;
+    background: rgb(125,126,125); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(125,126,125,0.9) 0%, rgba(14,14,14,0.9) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(125,126,125,0.9) 0%,rgba(14,14,14,0.9) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(125,126,125,0.9) 0%,rgba(14,14,14,0.9) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
+    transform: rotateY(90deg) translateZ(300px);
+    & .right__artists-inf{
+        border: 1px solid white;
+        margin-top: 2em;
+        border-radius: 5px;
+        background-color: white;
+        color: black;
+        & .right__artists-inf__main-section{
+            justify-content: space-between;
+            display: flex;
+            padding: 1em 3em;
+            & .right__artists-inf__main-section__img-section{
+                width: 36%;
+            }
+            & .right__artists-inf__main-section__name-section{
+                max-width: 60%;
+                & h1{
+
+                }
+            }
+        }
+       
+        
+    }
+}

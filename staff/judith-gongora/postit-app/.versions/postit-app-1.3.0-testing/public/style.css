@@ -1,0 +1,74 @@
+#root {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-padding {
+  margin-right: 20px;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-login {
+  max-width: 500px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+header img {
+  height: 150px;
+}
+header nav {
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form button {
+  margin-top: 30px;
+  width: 100px;
+}
+
+.section-articles {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+article {
+  background-image: url("http://astrodisco.net/wp-content/uploads/11-post-it-png.png");
+  background-size: 100%;
+  padding: 40px 15px 10px 15px;
+  width: 200px;
+  height: 215px;
+}
+
+.transparent {
+  height: 120px;
+  background: transparent;
+  border: none;
+  resize: none;
+}
+
+/*# sourceMappingURL=style.css.map */

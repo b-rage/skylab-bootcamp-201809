@@ -1,0 +1,185 @@
+$signup__button__color: white
+$signup__button__background-color:#593959
+$signup__button__background-color--secondary: #0075A2
+$header__background-color: #46BDD5
+    
+.post 
+    background-color: yellow
+    width: 100px
+    height: 100px
+    margin: 10px
+    textarea 
+        background: transparent
+        border: none
+        width: inherit
+        height: inherit
+        resize: none
+
+
+.fa-sticky-note 
+    color: gold
+
+
+.error 
+    color: red
+
+
+.div-home 
+    border: solid 1px black
+
+
+.image 
+    width: 150px
+    height: 150px
+
+
+   
+.landing__page
+   display: grid
+   grid-template-columns: auto auto auto
+   background-image: url('https://i.redd.it/r0ad288kma8x.jpg')
+.landing
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
+    align-content: center
+    justify-content: center
+    border-style: solid
+    max-width: 450px
+    height: 100vh
+    margin-top: 35%
+    margin-bottom: 20%
+    grid-column-start: 2 
+    &__register-button    
+        position: relative
+        color: $signup__button__color
+        background-color: $signup__button__background-color
+        border-radius: 15px
+        padding: 20px
+        margin-left: 20%
+        margin-right: 20%
+        display: flex
+        align-content: center
+        justify-content: center
+        text-decoration: none
+        font-size: 30px
+        border: 1px solid gray
+        outline: 0
+        cursor: pointer
+        &::before
+            position: absolute
+            top: 0
+            left: 0
+            border-radius: 15px
+            background-image: linear-gradient(rgba(255, 255, 255, .2) 50%, transparent 50%)
+            content: ""
+            height: 100%
+            width: 100%
+ 
+    
+        &--login
+            @extend .landing__register-button
+            background-color: $signup__button__background-color--secondary
+
+    &__or
+        display: flex
+        align-content: center
+        justify-content: center
+        font-size: 40px
+
+input[type=text], input[type=password]
+    width: 100%
+    padding: 12px 20px
+    margin: 8px 0
+    display: inline-block
+    border: 1px solid #ccc
+    border-radius: 4px
+    box-sizing: border-box
+
+.register__submit
+    width: 100%
+    background-color: #7cEA9C
+    color: black
+    padding: 14px 20px
+    margin: 8px 0
+    border: none
+    border-radius: 4px
+    cursor: pointer
+    
+
+.register__back
+    text-decoration: none
+    cursor: pointer
+    margin-top: 20px
+    background-color: black
+    font-size: 20px
+    color: white   
+    border-radius: 15px
+    padding: 20px
+    display: inline-block
+
+.register__page
+    display: grid
+    grid-template-columns: auto auto auto 
+    background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%)
+.register
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
+    align-content: center
+    justify-content: center
+    border-style: solid
+    max-width: 450px
+    height: 100vh
+    margin-top: 35%
+    margin-bottom: 20%
+    grid-column-start: 2 
+
+.login__page
+    display: grid
+    grid-template-columns: auto auto auto 
+    background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%)    
+.login
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
+    justify-content: center
+    border-style: solid
+    max-width: 450px
+    height: 100vh
+    margin-top: 35%
+    margin-bottom: 20%
+    grid-column-start: 2 
+
+.login__submit
+    width: 100%
+    background-color: #7cEA9C
+    color: black
+    padding: 14px 20px
+    margin: 8px 0
+    border: none
+    border-radius: 4px
+    cursor: pointer    
+
+.login__back
+    text-decoration: none
+    cursor: pointer
+    margin-top: 20px
+    background-color: black
+    font-size: 20px
+    color: white   
+    border-radius: 15px
+    padding: 20px
+    display: inline-block  
+
+.login__header
+    margin-bottom: 100px      
+
+
+
+    
+    
+
+
+
+

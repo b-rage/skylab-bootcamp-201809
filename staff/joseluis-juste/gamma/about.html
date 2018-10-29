@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ABOUT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://file.myfontastic.com/TKhv4HW6qV8tGeVkfgpQ8R/icons.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="wrap">
+       
+        <header class="header">
+            <nav class="header__nav">
+                <h2 class="header__nav__title">
+                    Gamma
+                </h2>
+                <ul id="menu" class="header__nav__menu">
+                        <li id="menu-button" class="icon-bars"></li>
+                        <li><a href="index.html">Gamma</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                <div class="icon-bars">
+
+                </div>
+            </nav>
+        </header>
+
+        <main class="main-about">
+            <h1 class="main__title">About Gamma</h1>
+            <section class="main-about__section">
+                <article class="main-about__section__desc">
+                    <h2 class="main-about__section__desc__title">intrigueproof</h2>
+                    <p class="main-about__section__desc__text">Lorem ipsum, dolor sit amet consectetur adipisicing
+                        elit. Amet, eius esse ducimus officia similique officiis distinctio, nobis, saepe ab ad
+                        consequuntur nam voluptatibus sunt quo architecto nisi ratione iure reprehenderit!</p>
+                    <div class="collapsable">
+                        <h3 class="collapsable__title">Collapsible Group Item #1</h3>
+                        <p class="collapsable__desc">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, perferendis
+                            aspernatur debitis pariatur aut architecto eligendi, magnam, aliquid earum illum
+                            reprehenderit nostrum odio minima eius tempore quibusdam quae ea ex?
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid architecto ad tempora ab
+                            culpa, repudiandae repellendus, officia laudantium ex eos quo excepturi reiciendis beatae
+                            voluptatem a debitis magni rerum sapiente.
+                        </p>
+                    </div>
+                    <div class="collapsable">
+                        <h3 class="collapsable__title">Collapsible Group Item #2</h3>
+                        <p class="collapsable__desc collapsable-up">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, perferendis
+                            aspernatur debitis pariatur aut architecto eligendi, magnam, aliquid earum illum
+                            reprehenderit nostrum odio minima eius tempore quibusdam quae ea ex?
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid architecto ad tempora ab
+                            culpa, repudiandae repellendus, officia laudantium ex eos quo excepturi reiciendis beatae
+                            voluptatem a debitis magni rerum sapiente.
+                        </p>
+                    </div>
+                    <div class="collapsable">
+                        <h3 class="collapsable__title">Collapsible Group Item #3</h3>
+                        <p class="collapsable__desc collapsable-up">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, perferendis
+                            aspernatur debitis pariatur aut architecto eligendi, magnam, aliquid earum illum
+                            reprehenderit nostrum odio minima eius tempore quibusdam quae ea ex?
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid architecto ad tempora ab
+                            culpa, repudiandae repellendus, officia laudantium ex eos quo excepturi reiciendis beatae
+                            voluptatem a debitis magni rerum sapiente.
+                        </p>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card__logo">
+                        <img src="./img/demo2.jpg" alt="">
+                    </div>
+                    <h2 class="card__title">
+                        cabalistically
+                    </h2>
+                    <p class="card__desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit in voluptas sit? Illum,
+                        blanditiis. Eligendi libero laborum iste eaque voluptate nisi, quisquam animi ad sint! Quos
+                        optio quibusdam voluptates ducimus.
+                    </p>
+                    <a class="button" href="">Read More</a>
+                </article>
+            </section>
+        </main>
+        <footer class="footer">
+            <section class="footer__features">
+                <section class="footer__features__section">
+                    <h2 class="footer__features__section__title">Gamma Features</h2>
+                    <ul class="footer__features__section__options">
+                        <li class="footer__features__section__options__option icon-check">charlatanistic</li>
+                        <li class="footer__features__section__options__option icon-check">unembattled</li>
+                        <li class="footer__features__section__options__option icon-check">bleekbok</li>
+                        <li class="footer__features__section__options__option icon-check">overtipple</li>
+                        <li class="footer__features__section__options__option icon-check">empathically</li>
+                    </ul>
+
+                </section>
+                <div class="footer__features__logo">
+                    <img src="./img/logo.png" alt="">
+                </div>
+            </section>
+            <nav class="footer__nav">
+                <ul class="footer__nav__menu">
+                    <li class="footer__nav__menu__item"><a href="index.html">Home</a></li>
+                    <li class="footer__nav__menu__item"><a href="about.html">About</a></li>
+                    <li class="footer__nav__menu__item"><a href="contact.html">Contact</a></li>
+                    <li class="footer__nav__menu__item"><a href="index.html">Privacy Policy</a></li>
+                </ul>
+                <p class="footer__nav__copyright">CopyRight 2015, All Rights Reserved</p>
+            </nav>
+        </footer>
+    </div>
+    <script>
+        [].forEach.call(document.getElementsByClassName("icon-bars"), (x, i, arr) => {
+
+            x.addEventListener("click", function (ele, ev) {
+
+                 var menu = document.getElementsByClassName("header__nav__menu")[0];
+
+                if (menu.className.indexOf("show-menu") !== -1) {
+
+                    menu.className = menu.className.replace(" show-menu", "");
+                    document.getElementsByClassName("wrap")[0].className = document.getElementsByClassName("wrap")[0].className.replace(" block-scroll", "");
+
+                } else {
+
+                    menu.className = menu.className + " show-menu";
+                    document.getElementsByClassName("wrap")[0].className += " block-scroll";
+                }
+            });
+
+        });
+
+        [].forEach.call(document.getElementsByClassName("collapsable__title"), (x, i, arr) => {
+
+            x.addEventListener("click", function (event) {
+
+                var ele = (event.target.nextSibling.nextSibling);
+
+                [].forEach.call(document.getElementsByClassName("collapsable__desc"), (x, i, arr) => {
+
+                    if (x !== ele)
+                        if (x.className.indexOf("collapsable-up") === -1) {
+                            x.className = x.className + " collapsable-up";
+                        }
+                });
+
+                if ((ele.hasAttributes()) && ([].some.call(ele.attributes, x => { return x.name === "class" })))
+
+                    if (ele.className.indexOf("collapsable-up") !== -1)
+
+                        ele.className = ele.className.replace(" collapsable-up", "");
+                    else
+                        ele.className = ele.className + " collapsable-up";
+
+
+            });
+        });
+    </script>
+</body>
+
+</html>

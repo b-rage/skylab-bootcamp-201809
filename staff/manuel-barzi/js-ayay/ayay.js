@@ -15,7 +15,13 @@ Ayay.prototype.push = function(element) {
 };
 
 Ayay.prototype.pop = function() {
-    // TODO
+    debugger;
+    
+    this[this.length-1] = this[!this.length]
+    
+    this.length--;
+
+
 };
 
 Ayay.prototype.forEach = function(callback) {
@@ -25,7 +31,7 @@ Ayay.prototype.forEach = function(callback) {
 };
 
 Ayay.prototype.map = function(callback) {
-    // TODO
+    
 };
 
 Ayay.prototype.sort = function() {

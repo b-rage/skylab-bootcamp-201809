@@ -1,0 +1,69 @@
+.container {
+    width: 600px;
+    height: 600px;
+    margin: 50px auto;
+    position: relative;
+    perspective: 1161px;
+    margin-top: 10em;
+    color:white;
+    
+    .cube {
+
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      transition: transform 1s;
+      & > section {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        border: 2px solid black;
+      }
+     
+      &.rotateX--90{
+        transform: rotateX(-90deg);
+      }
+      &.rotateX-90{
+        transform: rotateX(90deg);
+      }
+
+      &.rotateX-0{
+        transform: rotateX(0deg);
+      }
+
+      &.rotateY--90{
+        transform: rotateY(-90deg);
+      }
+
+      &.rotateY-90{
+        transform: rotateY(90deg);
+      }
+
+      &.rotateY--180{
+        transform: rotateY(-180deg);
+      }
+      &.rotateY-180{
+        transform: rotateY(180deg);
+      }
+      &.rotateY--270{
+        transform: rotateY(-270deg);
+      }
+      &.rotateY-270{
+        transform: rotateY(270deg);
+      }
+     
+     
+      &.rotateY-0{
+        transform: rotateY(0deg);
+      }
+      &.rotateY-360{
+        transform: rotateY(360deg);
+      }
+    }
+    
+}
+    
+
+ 

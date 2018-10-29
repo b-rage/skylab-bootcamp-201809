@@ -1,0 +1,96 @@
+.bg-light {
+  background-color: #F8F8F8; }
+
+.navbar-light .navbar-brand {
+  color: #1CAA98; }
+
+#title-container {
+  background-color: #1B222A;
+  text-align: center;
+  color: white;
+  padding-bottom: 40px;
+  margin-bottom: 80px; }
+  @media screen and (min-width: 580px) {
+    #title-container {
+      background-image: url("site_showcase_bg.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      text-align: left; } }
+
+.title {
+  padding-top: 40px;
+  padding-bottom: 40px; }
+
+mark {
+  color: #1CAA98;
+  background-color: #1B222A; }
+  @media screen and (min-width: 580px) {
+    mark {
+      background-color: transparent; } }
+
+.subtitle {
+  font-size: 100%;
+  padding-bottom: 20px; }
+
+@media screen and (min-width: 580px) {
+  .timages {
+    display: inline-flex; } }
+
+.image-container {
+  padding-bottom: 20px; }
+  @media screen and (min-width: 580px) {
+    .image-container {
+      margin-right: 40px; } }
+
+.card {
+  border: none; }
+
+.card-img-top {
+  border: 2px solid #DDDDDD; }
+
+.btn {
+  background-color: white;
+  color: #1B222A;
+  border: 1px solid #DDDDDD;
+  border-radius: 3px; }
+
+#footer-up {
+  background-color: #1CAA98;
+  text-align: left;
+  padding-top: 40px;
+  padding-left: 40px;
+  margin-bottom: 0px;
+  color: white; }
+  @media screen and (min-width: 580px) {
+    #footer-up {
+      background-color: #1CAA98;
+      text-align: left;
+      padding-top: 40px;
+      padding-left: 40px;
+      margin-bottom: 0px;
+      color: white; } }
+
+#footer-down {
+  margin-bottom: 0px;
+  text-align: center;
+  background-color: #1B222A;
+  color: white; }
+  @media screen and (min-width: 580px) {
+    #footer-down {
+      margin-bottom: 0px;
+      text-align: center;
+      background-color: #1B222A; } }
+
+@media screen and (min-width: 580px) {
+  .list-footer {
+    text-align: left; } }
+
+.lifooter {
+  display: inline; }
+
+@media screen and (min-width: 580px) {
+  .copyright {
+    text-align: right; } }
+
+/*# sourceMappingURL=style.css.map */

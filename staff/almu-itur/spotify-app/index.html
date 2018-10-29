@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--shrink-to-fit=no-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/style.css">
+
+    <title>Spotify</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <h1 class="navbar-brand">Spotify App</h1>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <section class="player">
+                <audio controls autoplay loop></audio>
+            </section>
+        </form>
+    </nav>
+
+    <section class="imgArtist"></section>
+
+    <div class="list-group"></div>
+    <section class="artists">
+        <h2>Artists</h2>
+        <ul>
+        </ul>
+        <div class="artistPicture"></div>
+    </section>
+    </div>
+
+    <div class="list-group"></div>
+    <section class="albums">
+        <h2>Albums</h2>
+        <ul>
+        </ul>
+    </section>
+    </div>
+
+    <section class="imgAlbum"></section>
+
+    <section class="songs">
+        <h2>Songs</h2>
+        <ul>
+        </ul>
+    </section>
+
+    <script src="vendor/jquery/3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="vendor/popper/1.14.3/popper-1.14.3.min.js"></script>
+    <script src="vendor/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="logic.js"></script>
+    <script src="view.js"></script>
+    <script src="main.js"></script>
+</body>
+<footer>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        </nav>
+</footer>
+
+</html>

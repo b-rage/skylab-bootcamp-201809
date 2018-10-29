@@ -1,0 +1,580 @@
+$color-primary: #2ebcc3
+$color-danger: #c3352e
+$color-secondary: #888
+$color-background: #121212
+$color-text: #fff
+$header-height: 60px
+
+%button
+    padding: .5rem 1rem
+    background-color: transparent
+    border: none
+    color: $color-text
+    font-size: 16px
+    font-weight: 700
+    text-transform: uppercase
+    cursor: pointer
+    &:focus
+        outline: 0
+
+%dropdown
+    position: absolute
+    display: none
+    z-index: 1000
+
+body
+    margin: 0
+    font-family: Roboto, Arial, sans-serif
+    color: $color-text
+
+    .landing
+        margin: 0
+        width: 100vw
+        height: 100vh
+        background-color: $color-background
+        overflow-y: scroll
+
+        .navbar
+            position: sticky
+            top: 0
+            display: flex
+            justify-content: space-between
+            padding: 0 2rem
+            height: $header-height
+            background-color: lighten($color-background, 7%)
+
+            &__title
+                display: flex
+                align-items: center
+                h1
+                    margin: 0
+
+            &__logo
+                height: 40px
+                margin-right: 5px
+
+            &__menu
+                display: flex
+                align-items: center
+                list-style-type: none
+
+            &__button
+                @extend %button
+                text-decoration: none
+                color: $color-text
+                &--separator
+                    font-size: 16px
+                    color: $color-primary
+
+        .container
+            display: flex
+            justify-content: flex-start
+            flex-direction: row
+            align-items: center
+
+    .header
+        display: grid
+        grid-template-columns: 60% 40%
+        margin: 2rem 0
+
+        &__hero
+            display: flex
+            flex-direction: column
+            justify-content: center
+            padding: 5rem
+
+        &__title
+            margin: 0
+            margin-bottom: 1rem
+            font-size: 64px
+            font-weight: 500
+
+        &__text
+            margin: 0
+            font-size: 20px
+            margin-bottom: .5rem
+
+    .showcase
+        display: grid
+        grid-template-columns: repeat(2, 50%)
+        background-color: lighten($color-background, 4%)
+        &--odd
+            background-color: lighten($color-background, 7%)
+
+        &__show
+            display: flex
+            justify-content: center
+            align-items: center
+            padding: 2rem
+
+        &__image
+            width: 100%
+            border-radius: 1rem
+            box-shadow: 0px 0px 25px 0px $color-primary
+
+        &__case
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: flex-start
+            padding: 2rem
+
+        &__title
+            margin: 0
+            margin-bottom: .5rem
+            font-size: 48px
+            font-weight: 500
+
+        &__text
+            margin: 0
+
+    .footer
+        display: flex
+        justify-content: center
+        align-items: center
+        font-size: 12px
+        padding: 2rem
+
+    .signup
+        grid-column: 2
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+
+    .login
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        width: 100vw
+        height: calc(100vh - 100px)
+        background-color: lighten($color-background, 4%)
+        color: $color-text
+        padding-bottom: 100px
+
+        &__title
+            display: flex
+            justify-content: center
+            align-items: center
+
+        &__logo
+            height: 50px
+            margin-right: 5px
+
+    .home
+        position: relative
+        display: grid
+        grid-template-columns: 240px calc(100vw - 560px) 320px
+        grid-template-rows: $header-height calc(100vh - #{$header-height})
+        background-color: $color-background
+        overflow: hidden
+
+        .sidenav
+            grid-row: 1/3
+            grid-column: 1
+            background-color: lighten($color-background, 4%)
+            overflow: hidden
+
+            &-head
+                display: flex
+                flex-wrap: wrap
+                align-items: center
+                justify-content: center
+                height: $header-height
+                background-color: lighten($color-background, 7%)
+
+                &__logo
+                    max-width: 50px
+                    max-height: 50px
+                    margin-right: 5px
+
+            &__lists
+                height: calc(100vh - #{$header-height})
+                display: flex
+                flex-direction: column
+                overflow-y: scroll
+
+            &__menu
+                margin: 0
+                padding: 0
+                list-style-type: none
+
+            &__title
+                margin: 1rem 0 .5rem 1rem
+                font-size: 16px
+                font-weight: 700
+                text-transform: uppercase
+                color: $color-secondary
+
+            &__item
+                position: relative
+                height: 24px
+                padding: .5rem 0 .5rem 3rem
+                line-height: 24px
+
+                &--active
+                    background-color: lighten($color-background, 14%)
+
+                    .sidenav__icon
+                        color: $color-primary
+
+                &:hover
+                    background-color: lighten($color-background, 21%)
+                    cursor: pointer
+
+            &__icon
+                position: absolute
+                top: 10px
+                left: .75rem
+                font-size: 20px
+                color: $color-secondary
+                &--small
+                    top: 12px
+                    left: 1rem
+                    font-size: 16px
+
+
+        .search
+            grid-row: 1
+            grid-column: 2
+            display: flex
+            align-items: center
+            justify-content: center
+            background-color: lighten($color-background, 7%)
+
+            &__input
+                width: 80%
+                border: none
+                border-top-left-radius: 10px
+                border-bottom-left-radius: 10px
+                padding: .5rem 1.5rem
+                background-color: lighten($color-background, 23%)
+                color: $color-text
+                font-size: 18px
+                &::placeholder
+                    color: $color-text
+                &:focus
+                    outline: 0
+                    &::placeholder
+                        opacity: 0
+
+            &__button
+                margin-left: -40px
+                padding: .5rem 1.5rem
+                border: none
+                border-top-right-radius: 10px
+                border-bottom-right-radius: 10px
+                background-color: $color-primary
+                color: $color-text
+                font-size: 18px
+                transition: all .1s linear
+                &:hover
+                    background-color: darken($color-primary, 15%)
+                    cursor: pointer
+                &:focus
+                    outline: 0
+
+        .profile
+            grid-row: 1
+            grid-column: 3
+            display: flex
+            justify-content: flex-end
+            background-color: lighten($color-background, 7%)
+
+            &__button
+                @extend %button
+                margin: .5rem 1rem
+
+            &__content
+                @extend %dropdown
+                top: calc(#{$header-height} - 1rem)
+                right: 1rem
+                background-color: lighten($color-background, 22%)
+                &--open
+                    display: block
+
+            &__info
+                display: grid
+                grid-template-columns: 100px 180px
+                height: 100px
+                margin: 1rem
+
+            &__image
+                height: inherit
+
+                img
+                    height: inherit
+
+            &__text
+                display: flex
+                flex-direction: column
+                justify-content: flex-start
+                margin: 1rem 0 0 1rem
+                font-size: 14px
+
+                h1, p, a
+                    margin: 0 0 .25rem
+
+                a
+                    text-decoration: none
+                    color: $color-primary
+                    &:hover
+                        text-decoration: underline
+
+            &-footer
+                display: flex
+                justify-content: flex-end
+                background-color: lighten($color-background, 7%)
+                padding: .5rem
+
+                &__button
+                    @extend %button
+
+        .main
+            grid-column: 2/4
+            grid-row: 2
+            overflow-y: scroll
+
+            .videolist
+                display: flex
+                flex-direction: column
+                margin: 0 1.5rem 0 .75rem
+
+                .videolist__videos
+                    display: grid
+                    grid-template-columns: repeat(5, 20%)
+                    grid-gap: .25rem
+
+                .video
+                    margin-bottom: 18px
+                    cursor: pointer
+
+                    &__image
+                        height: 120px
+                        margin-right: 0
+
+                    &__title
+                        margin: 0
+                        font-size: 14px
+
+            .player
+                width: 720px
+                margin: 10vh auto 0
+
+                &__video iframe
+                    width: 100%
+                    height: 405px
+
+                &-footer
+                    display: flex
+                    flex-direction: column
+
+                    &__title
+                        font-size: 20px
+                        margin: .5rem 1rem 0
+
+                    &__buttons
+                        display: flex
+                        justify-content: flex-end
+                        align-items: center
+
+                    &__button
+                        @extend %button
+                        font-size: 24px
+                        &--text
+                            font-size: 16px
+                        &--active
+                            color: $color-primary
+
+                    .playlists
+                        position: relative
+
+                        &__title
+                            margin: 0
+                            padding: .75rem 1.5rem
+                            font-size: 16px
+                            font-weight: 600
+                            border-bottom: 1px solid #666
+
+                        &__content
+                            @extend %dropdown
+                            bottom: 100%
+                            width: 240px
+                            background-color: lighten($color-background, 7%)
+                            font-size: 14px
+                            overflow: hidden
+                            &--open
+                                display: block
+
+                        &__menu
+                            position: relative
+                            max-height: 126px
+                            margin: 0
+                            padding: 0
+                            list-style-type: none
+                            overflow-y: scroll
+
+                        &__item
+                            position: relative
+                            display: block
+                            padding: 10px 0 10px 3rem
+                            cursor: pointer
+
+                            input
+                                display: none
+                                &:checked ~ .checkmark
+                                    background-color: $color-primary
+                                    border-color: $color-primary
+                                    &:after
+                                        display: block
+
+                            .checkmark
+                                position: absolute
+                                top: 8px
+                                left: .75rem
+                                height: 18px
+                                width: 18px
+                                border-radius: 5px
+                                border: 2px solid $color-text
+                                &:after
+                                    content: ""
+                                    position: absolute
+                                    display: none
+                                    left: 6px
+                                    top: 2px
+                                    width: 5px
+                                    height: 10px
+                                    border: solid $color-text
+                                    border-width: 0 3px 3px 0
+                                    -webkit-transform: rotate(45deg)
+                                    -ms-transform: rotate(45deg)
+                                    transform: rotate(45deg)
+
+                        &__input
+                            width: 100%
+                            padding: .75rem 1.5rem
+                            background-color: lighten($color-background, 7%)
+                            border: none
+                            border-top: 1px solid #666
+                            font-size: 14px
+                            color: $color-text
+                            &::placeholder
+                                color: $color-text
+                            &:focus
+                                outline: 0
+                                &::placeholder
+                                    opacity: 0
+
+            .playlist
+                &-header
+                    position: relative
+                    display: flex
+                    justify-content: space-between
+                    background-color: lighten($color-background, 3%)
+                    padding: 1.5rem 3rem
+
+                    &__title
+                        margin: 0
+                        margin-bottom: .5rem
+                        font-size: 30px
+
+                    &__text
+                        margin: 0
+                        font-size: 14px
+
+                    &__button
+                        @extend %button
+                        height: 58px
+                        font-size: 24px
+                        color: $color-secondary
+                        transition: color .1s linear
+                        &:hover
+                            color: $color-text
+
+                    &__input
+                        width: 60%
+                        padding: .75rem 1.5rem
+                        border: none
+                        border-radius: 10px
+                        background-color: lighten($color-background, 23%)
+                        color: $color-text
+                        font-size: 30px
+                        font-weight: 700
+                        &:focus
+                            outline: 0
+
+                &-main
+                    margin: 1rem 0
+
+            .searchlist
+                margin: 1rem 0
+
+            .playlist, .searchlist
+                .video
+                    display: flex
+                    padding: .5rem 1.5rem
+
+                    &__image
+                        height: 120px
+                        margin-right: 1rem
+                        cursor: pointer
+
+                    &__title
+                        margin: 0
+                        padding: .5rem 2rem 0 0
+                        font-size: 20px
+
+    .form
+        display: flex
+        flex-direction: column
+        width: 250px
+        padding: 1.5rem 30px
+        border-radius: 10px
+        text-align: left
+        background-color: lighten($color-background, 20%)
+
+        &__label
+            margin: 0
+            font-size: 14px
+
+        &__input
+            margin: .25rem 0 1rem
+            padding: 0 1rem
+            border-radius: 5px
+            height: 30px
+            border: none
+            &:focus
+                outline: 0
+
+        &__button
+            @extend %button
+            background-color: $color-primary
+            border-radius: 5px
+            text-transform: capitalize
+            transition: all .1s linear
+            &:hover
+                background-color: darken($color-primary, 15%)
+
+        &__return
+            align-self: flex-end
+            margin: .75rem 1.5rem 0
+            text-decoration: none
+            color: $color-text
+            &:hover
+                text-decoration: underline
+
+    .error
+        width: 250px
+        height: 30px
+        margin-bottom: .5rem
+        padding: .5rem 30px
+        border-radius: 10px
+        background-color: lighten($color-background, 20%)
+        color: red
+        text-align: center
+
+        &__text
+            margin: 0
+            font-size: 16px
+            line-height: 30px

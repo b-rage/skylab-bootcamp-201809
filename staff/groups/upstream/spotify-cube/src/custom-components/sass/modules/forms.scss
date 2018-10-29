@@ -1,0 +1,30 @@
+.custom-form{
+    width: 100%;
+    padding: 1em;
+    border: 1px solid white;
+    border-radius: 5px;
+    & label{
+        color: white;
+    }
+    & input[type="text"]:focus,input[type="password"]:focus{
+
+        border-color:rgb(255, 193, 7);
+    }
+    & button{
+        background: white;
+        color: rgb(255, 193, 7);
+        border-color: rgb(255, 193, 7);
+        &:hover{
+            background-color: rgb(255, 193, 7);
+            color:white;
+        }
+        &:last-of-type{
+            margin-left: 1em;
+        }        
+    }
+    & h2{
+        margin-top:0.5em;
+        color: #ffc107;
+    }
+    
+}

@@ -1,0 +1,69 @@
+// https://css-tricks.com/apply-a-filter-to-a-background-image/
+
+.box-shadow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    -moz-box-shadow: black 30px 30px 500px inset;
+    -webkit-box-shadow: black 30px 30px 500px inset;
+    box-shadow: black 3px 3px 500px inset;
+}
+
+
+.landing--parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.landing--bg-img {
+    position: absolute;
+    opacity: 0.9;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: url("../img/concert-min.jpg");
+    filter: grayscale(45%) blur(7px);
+    z-index:-1;
+}
+
+
+.landing--content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.title--landing {
+    font-size: 150px;
+    font-family: 'Bungee Shade', cursive;
+    font-weight: 900;
+    color: #FFC107;
+    text-shadow: 6px 4px 11px black;
+}
+
+.landing--underlogo {
+    color: rgb(46, 43, 43);
+    font-weight: 600;
+    font-size: 100px;
+    font-family: Verdana;
+    text-shadow: 5px 5px 10px rgb(70, 68, 68);
+}
+
+
+
+
+.img-logo {
+    height: 180px;
+    width: 200px;
+
+}

@@ -1,0 +1,6 @@
+.header {
+  padding: 1em;
+  border: 1px solid white;
+  border-radius: 5px; }
+  .header .header__logo img {
+    width: 30%; }

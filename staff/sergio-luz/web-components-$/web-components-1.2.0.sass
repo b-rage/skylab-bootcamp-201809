@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400')
+
+$dialog_background-color: silver
+$dialog_border-color: gray
+$dialog_title_color: gray
+$dialog_body_color: black
+    
+$alert_background-color: #DEF2FC
+$alert_border-color: #4BC9F3
+$alert_title_color: #177CBF
+$alert_background-color_danger: #FCDCCD
+$alert_border-color_danger: #EA2631
+$alert_title_color_danger: #ED4C44    
+$alert_body_color: black
+
+.panel
+    background-color: $dialog_background-color
+    padding: 20px
+    border-radius: 15px
+    border: 5px solid $dialog_border-color
+    font-family: Roboto
+    font-weight: bold
+
+    &__title
+        color: $dialog_title_color
+
+.dialog
+    @extend .panel
+    
+    background-color: $dialog_background-color
+    border-color: $dialog_border-color
+
+    &__title
+        color: $dialog_title_color
+
+    &__body
+        color: $dialog_body_color
+
+.alert
+    @extend .dialog
+
+    background-color: $alert_background-color
+    border-color: $alert_border-color
+
+    &__title
+        color: $alert_title_color
+    
+    &__body
+        color: $alert_body_color
+    
+    &__button
+        padding: 10px
+        border-radius: 10px
+
+    &--danger
+        background-color: $alert_background-color_danger
+        border-color: $alert_border-color_danger
+
+        h2
+            color: $alert_title_color_danger
+
+.confirm
+    @extend .alert
+
+    &__title
+        color: $alert_title_color
+    
+    &__button
+        padding: 10px
+        border-radius: 10px
+
+        &--accept
+            background-color: darkgray
+

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CONTACT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://file.myfontastic.com/TKhv4HW6qV8tGeVkfgpQ8R/icons.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="wrap">
+       
+        <header class="header">
+            <nav class="header__nav">
+                <h2 class="header__nav__title">
+                    Gamma
+                </h2>
+                <ul id="menu" class="header__nav__menu">
+                        <li id="menu-button" class="icon-bars"></li>
+                        <li><a href="index.html">Gamma</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                <div class="icon-bars">
+
+                </div>
+            </nav>
+        </header>
+
+        <main class="main-contact">
+            <h1 class="main__title">Contact Us</h1>
+            <section class="main-contact__section">
+                <form class="form-contact">
+                    <div class="form-contact__groupfield">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" placeholder="Enter name">
+                    </div>
+                    <div class="form-contact__groupfield">
+                        <label for="c_name">Company Name</label>
+                        <input type="text" name="c_name" id="c_name" placeholder="Enter company name">
+                    </div>
+                    <div class="form-contact__groupfield">
+                        <label for="email">Email Address</label>
+                        <input type="email" name="email" id="email" placeholder="Enter Email">
+                    </div>
+                    <div class="form-contact__groupfield">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter Message"></textarea>
+                    </div>
+                    <input type="submit" value="Submit" class="button">
+                </form>
+                <article class="card">
+                    <div class="card__logo">
+                        <img src="./img/demo2.jpg" alt="">
+                    </div>
+                    <h2 class="card__title">
+                        cabalistically
+                    </h2>
+                    <p class="card__desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit in voluptas sit? Illum,
+                        blanditiis. Eligendi libero laborum iste eaque voluptate nisi, quisquam animi ad sint! Quos
+                        optio quibusdam voluptates ducimus.
+                    </p>
+                    <a class="button" href="">Read More</a>
+                </article>
+            </section>
+        </main>
+        <footer class="footer">
+            <section class="footer__features">
+                <section class="footer__features__section">
+                    <h2 class="footer__features__section__title">Gamma Features</h2>
+                    <ul class="footer__features__section__options">
+                        <li class="footer__features__section__options__option icon-check">charlatanistic</li>
+                        <li class="footer__features__section__options__option icon-check">unembattled</li>
+                        <li class="footer__features__section__options__option icon-check">bleekbok</li>
+                        <li class="footer__features__section__options__option icon-check">overtipple</li>
+                        <li class="footer__features__section__options__option icon-check">empathically</li>
+                    </ul>
+
+                </section>
+                <div class="footer__features__logo">
+                    <img src="./img/logo.png" alt="">
+                </div>
+            </section>
+            <nav class="footer__nav">
+                <ul class="footer__nav__menu">
+                    <li class="footer__nav__menu__item"><a href="index.html">Home</a></li>
+                    <li class="footer__nav__menu__item"><a href="about.html">About</a></li>
+                    <li class="footer__nav__menu__item"><a href="contact.html">Contact</a></li>
+                    <li class="footer__nav__menu__item"><a href="index.html">Privacy Policy</a></li>
+                </ul>
+                <p class="footer__nav__copyright">CopyRight 2015, All Rights Reserved</p>
+            </nav>
+        </footer>
+    </div>
+    <script>
+        [].forEach.call(document.getElementsByClassName("icon-bars"), (x, i, arr) => {
+
+            x.addEventListener("click", function (ele, ev) {
+
+                 var menu = document.getElementsByClassName("header__nav__menu")[0];
+
+                if (menu.className.indexOf("show-menu") !== -1) {
+
+                    menu.className = menu.className.replace(" show-menu", "");
+                    document.getElementsByClassName("wrap")[0].className = document.getElementsByClassName("wrap")[0].className.replace(" block-scroll", "");
+
+                } else {
+
+                    menu.className = menu.className + " show-menu";
+                    document.getElementsByClassName("wrap")[0].className += " block-scroll";
+                }
+            });
+
+        });
+
+    </script>
+</body>
+
+</html>

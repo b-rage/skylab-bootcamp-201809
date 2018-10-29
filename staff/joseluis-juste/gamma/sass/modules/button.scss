@@ -1,0 +1,18 @@
+.button{
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.5em 0.5em;
+    color: black;
+    border-radius: 4px;
+    border: 1px solid black;
+    font-size: 0.9em;
+    border-color: rgba(0, 0, 0, 0.2);
+    border-width: 1px;
+    &:hover{
+        background-color: black;
+        color:white;
+        border-color: white;
+        cursor: pointer;
+    }
+}
+

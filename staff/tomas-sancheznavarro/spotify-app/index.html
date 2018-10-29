@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="vendor/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Spotify App</title>
+</head>
+
+<body>
+    <section class="container">
+        <!-- <section>
+            <h1>Spotify App 🎧</h1>
+            <form>
+                <input type="text">
+                <button type="submit">Search Artist</button>
+            </form>
+        </section> -->
+
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand">Spotify App 🎧</a>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search Artist</button>
+            </form>
+        </nav>
+
+        <section class="artists">
+            <h2>Artists</h2>
+            <ul class='list-group'>
+            </ul>
+        </section>
+
+        <section class="albums">
+            <img>
+            <h3></h3>
+            <ul class='list-group'>
+            </ul>
+        </section>
+
+        <section class="tracklist">
+            <img>
+            <h3></h3>
+            <ul class='list-group'>
+            </ul>
+        </section>
+
+        <section class="player">
+            <h3></h3>
+            <audio controls autoplay loop volume="0.5"></audio>
+        </section>
+    </section>
+
+    <!-- Bootstrap -->
+    <script src="vendor/jquery/3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="vendor/popper/1.14.3/popper-1.14.3.min.js"></script>
+    <script src="vendor/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <!-- Javascript -->
+    <script src="logic.js"></script>
+    <script src="main.js"></script>
+    <script src="view.js"></script>
+</body>
+
+</html>

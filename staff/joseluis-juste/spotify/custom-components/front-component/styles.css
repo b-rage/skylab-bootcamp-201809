@@ -1,0 +1,18 @@
+.front {
+  padding: 1em; }
+  .front .front__search-form {
+    margin-top: 8em;
+    padding: 1em;
+    border: 1px solid white;
+    border-radius: 5px; }
+    .front .front__search-form label {
+      color: white; }
+    .front .front__search-form input[type="text"]:focus {
+      border-color: green; }
+    .front .front__search-form button {
+      background: white;
+      color: green;
+      border-color: green; }
+      .front .front__search-form button:hover {
+        background-color: green;
+        color: white; }
