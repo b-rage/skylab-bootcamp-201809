@@ -1,14 +1,10 @@
 
-
 const argv = process.argv.slice(2)
 
+let sum = 0;
 
-let total = 0
+//argv.forEach(num => sum += parseFloat(num))
+argv.forEach(num => sum += Number(num))
 
-argv.map(n => {
-total += Number(n)
-})
-
-console.log(total);
-
+console.log(sum)
 

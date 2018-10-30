@@ -2,9 +2,10 @@ const fs = require('fs')
 const path = require('path')
 
 
-module.exports = function () {
 
-    const [,,dir,ext] = process.argv
+
+module.exports = function (dir, callback) {
+
     
     fs.readdir(dir, (err, files) => {
         if(err) throw err
