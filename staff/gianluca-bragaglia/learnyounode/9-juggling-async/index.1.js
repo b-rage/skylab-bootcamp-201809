@@ -1,15 +1,9 @@
 const http = require('http')
-const after = require('after')
 
 const { argv: [, , ...urls] } = process
 
 const contents = []
-
-const next = after(urls.length, (err, results) => {
-    if (err) throw err
-
-    results.forEach(result => console.log(result))
-})
+let count = 0
 
 urls.forEach((url, index) => {
     http.get(url, res => {
@@ -22,7 +16,10 @@ urls.forEach((url, index) => {
         res.on('end', () => {
             contents[index] = content
 
-            next(undefined, contents)
+            count++
+
+            if (count === urls.length)
+                contents.forEach(content => console.log(content))
         })
     })
 })

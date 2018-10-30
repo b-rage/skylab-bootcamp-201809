@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "after": "^0.8.2",
     "async": "^2.6.1"
   }
 }
