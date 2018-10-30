@@ -1,0 +1,15 @@
+{
+  "name": "cp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs-copy-file": "^2.1.2"
+  }
+}
