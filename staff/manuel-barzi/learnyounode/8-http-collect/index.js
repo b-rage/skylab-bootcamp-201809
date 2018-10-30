@@ -8,6 +8,7 @@ http.get(url, res => {
         if (err) throw err
 
         // console.log(data.length)
+        // console.log(data) // WARN! prints buffer instead of converting it to string utf8
         // console.log(data.toString())
         
         // console.log(data.length + '\n' + data)
