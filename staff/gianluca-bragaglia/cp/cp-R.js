@@ -4,13 +4,13 @@ fs.stat(path, function(err, stats) {
    
  
     if (stats.isFile()) {
-        console.log('    file');
+        console.log('    file')
     }
     if (stats.isDirectory()) {
-        console.log('    directory');
+        console.log('    directory')
     }
 
 
  
-});
+})
  
