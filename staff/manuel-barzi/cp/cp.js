@@ -1,17 +1,19 @@
+const path = require('path')
 const fs = require('fs')
 
-const [, , orig, dest] = process.argv
+const { argv: [, , recu, from, to] } = process
 
-printMem()
+if (recu === '-R') {
+    function recursive(from, to) {
+        if (fs.lstatSync(from).isDirectory()) {
+            fs.mkdirSync(to)
 
-const rs = fs.createReadStream(orig)
+            fs.readdirSync(from)
+                .forEach(file => recursive(path.join(from, file), path.join(to, file)))
 
-const ws = fs.createWriteStream(dest)
+        } else fs.createReadStream(from).pipe(fs.createWriteStream(to))
+    }
 
-rs.pipe(ws)
+    recursive(from, to)
 
-rs.on('end', () => printMem())
-
-function printMem() {
-    console.log(process.memoryUsage().rss / 1024 / 1024)
-}
+} else fs.createReadStream(recu).pipe(fs.createWriteStream(from))
