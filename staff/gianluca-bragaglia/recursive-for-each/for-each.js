@@ -1,10 +1,15 @@
+// TODO ok, but it does not count indexes (neither pass it to callback)
 
-function forEach(array, callback, index = 0) {
-    if (index < array.length) {
-        callback(array[index], index)
+function forEach(array, callback) {
+    const copy = Array.from(array)
 
-        forEach(array, callback, ++index)
-    }
-  }
-  
-  module.exports = forEach
+    if (!copy.length) return
+
+    const first = copy.shift()
+
+    callback(first)
+
+    forEach(copy, callback)
+}
+
+module.exports = forEach
