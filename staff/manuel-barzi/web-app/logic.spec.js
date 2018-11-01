@@ -1,3 +1,4 @@
+const fs = require('fs')
 const { User } = require('./data')
 const logic = require('./logic')
 
@@ -8,11 +9,15 @@ const { expect } = require('chai')
 // debug -> $ mocha debug src/logic.spec.js --timeout 10000
 
 describe('logic', () => {
+    before(() => {
+        User._file = './data/users.spec.json'
+    })
+
     describe('register', () => {
         let name, surname, username, password
 
         beforeEach(() => {
-            logic._users = []
+            fs.writeFileSync(User._file, JSON.stringify([]))
 
             name = `name-${Math.random()}`
             surname = `surname-${Math.random()}`
@@ -21,11 +26,12 @@ describe('logic', () => {
         })
 
         it('should succeed on correct data', () => {
+            debugger
             logic.registerUser(name, surname, username, password)
 
-            const users = logic._users
+            const json = fs.readFileSync(User._file)
 
-            expect(users.length).to.equal(1)
+            const users = JSON.parse(json)
 
             const [user] = users
 
@@ -48,7 +54,7 @@ describe('logic', () => {
         beforeEach(() => {
             user = new User('John', 'Doe', 'jd', '123')
 
-            logic._users = [user]
+            fs.writeFileSync(User._file, JSON.stringify([user]))
         })
 
         it('should authenticate on correct credentials', () => {
@@ -59,7 +65,11 @@ describe('logic', () => {
             expect(id).to.exist
             expect(id).to.be.a('number')
 
-            const [_user] = logic._users
+            const json = fs.readFileSync(User._file)
+
+            const users = JSON.parse(json)
+
+            const [_user] = users
 
             expect(_user.id).to.equal(id)
         })
@@ -77,7 +87,7 @@ describe('logic', () => {
         beforeEach(() => {
             user = new User('John', 'Doe', 'jd', '123')
 
-            logic._users = [user]
+            fs.writeFileSync(User._file, JSON.stringify([user]))
         })
 
         it('should succeed on valid id', () => {
