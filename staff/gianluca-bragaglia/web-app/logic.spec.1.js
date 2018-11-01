@@ -1,4 +1,3 @@
-const { User } = require('./data')
 const logic = require('./logic')
 
 const { expect } = require('chai')
@@ -42,57 +41,34 @@ describe('logic', () => {
         // TODO other test cases
     })
 
-    describe('authenticate', () => {
+    describe('login', () => {
         let user
 
         beforeEach(() => {
-            user = new User('John', 'Doe', 'jd', '123')
+            user = { name: 'John', surname: 'Doe', username: 'jd', password: '123' }
 
             logic._users = [user]
         })
 
-        it('should authenticate on correct credentials', () => {
+        it('should login on correct credentials', () => {
             const { username, password } = user
 
-            const id = logic.authenticateUser(username, password)
+            logic.loginUser(username, password)
 
-            expect(id).to.exist
-            expect(id).to.be.a('number')
+            expect(logic.loggedIn).to.be.true
 
-            const [_user] = logic._users
+            const _user = logic._user
 
-            expect(_user.id).to.equal(id)
+            expect(_user.name).to.equal(user.name)
+            expect(_user.surname).to.equal(user.surname)
+            expect(_user.username).to.equal(username)
+            expect(_user.password).to.equal(password)
         })
 
         it('should fail on undefined username', () => {
-            expect(() => logic.authenticateUser(undefined, user.password)).to.throw(TypeError, 'undefined is not a string')
+            expect(() => logic.loginUser(undefined, user.password)).to.throw(TypeError, 'undefined is not a string')
         })
 
         // TODO other test cases
-    })
-
-    describe('retrieve', () => {
-        let user
-
-        beforeEach(() => {
-            user = new User('John', 'Doe', 'jd', '123')
-
-            logic._users = [user]
-        })
-
-        it('should succeed on valid id', () => {
-            const _user = logic.retrieveUser(user.id)
-
-            expect(_user).to.be.instanceof(User)
-
-            const { id, name, surname, username, password } = _user
-
-            expect(id).to.exist
-            expect(id).to.equal(user.id)
-            expect(name).to.equal(user.name)
-            expect(surname).to.equal(user.surname)
-            expect(username).to.equal(user.username)
-            expect(password).to.be.undefined
-        })
     })
 })
