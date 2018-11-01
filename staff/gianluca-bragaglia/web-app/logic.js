@@ -1,8 +1,6 @@
 const { User } = require('./data')
 
 const logic = {
-    _users: [new User('Peter', 'Sellers', 'u', 'p')],
-
     registerUser(name, surname, username, password) {
         if (typeof name !== 'string') throw TypeError(`${name} is not a string`)
         if (typeof surname !== 'string') throw TypeError(`${surname} is not a string`)
@@ -14,13 +12,13 @@ const logic = {
         if (!username.trim()) throw Error('username is empty or blank')
         if (!password.trim()) throw Error('password is empty or blank')
 
-        let user = this._users.find(user => user.username === username)
+        let user = User.findByUsername(username)
 
         if (user) throw Error(`username ${username} already registered`)
 
         user = new User(name, surname, username, password)
 
-        this._users.push(user)
+        user.save()
     },
 
     authenticateUser(username, password) {
@@ -30,9 +28,9 @@ const logic = {
         if (!username.trim()) throw Error('username is empty or blank')
         if (!password.trim()) throw Error('password is empty or blank')
 
-        const user = this._users.find(user => user.username === username && user.password === password)
+        const user = User.findByUsername(username)
 
-        if (!user) throw Error('invalid username or password')
+        if (!user || user.password !== password) throw Error('invalid username or password')
 
         return user.id
     },
@@ -40,7 +38,7 @@ const logic = {
     retrieveUser(id) {
         if (typeof id !== 'number') throw TypeError(`${id} is not a number`)
 
-        const user = this._users.find(user => user.id === id)
+        const user = User.findById(id)
 
         if (!user) throw Error(`user with id ${id} not found`)
 
