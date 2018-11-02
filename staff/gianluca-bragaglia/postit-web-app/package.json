@@ -13,6 +13,7 @@
     "body-parser": "^1.18.3",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
+    "express-method-override": "0.0.3",
     "express-session": "^1.15.6",
     "pug": "^2.0.3",
     "session-file-store": "^1.2.0"

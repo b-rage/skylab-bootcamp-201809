@@ -10,6 +10,7 @@ class User {
         this.surname = surname
         this.username = username
         this.password = password
+        this.postits = []
     }
 
     save() {
@@ -23,6 +24,55 @@ class User {
 
                 if (index < 0) users.push(this)
                 else users[index] = this
+
+                json = JSON.stringify(users)
+
+                fs.writeFile(User._file, json, (err) => {
+                    if (err) return reject(err)
+
+                    resolve()
+                })
+            })
+        })
+    }
+
+    savePostit(id,text) {
+        return new Promise((resolve, reject) => {
+            fs.readFile(User._file, (err, json) => {
+                if (err) return reject(err)
+
+                const users = JSON.parse(json)
+
+                const index = users.findIndex(user => user.id === id)
+
+                const postit = {id:Date.now(), text: text}
+
+                users[index].postits.push(postit)
+
+                json = JSON.stringify(users)
+
+                fs.writeFile(User._file, json, (err) => {
+                    if (err) return reject(err)
+
+                    resolve()
+                })
+            })
+        })
+    }
+
+    
+    deletePostit(userId, id) {
+        return new Promise((resolve, reject) => {
+            fs.readFile(User._file, (err, json) => {
+                if (err) return reject(err)
+
+                const users = JSON.parse(json)
+
+                const index = users.findIndex(user => user.id === userId)
+
+                const postits = users[index].postits.find(postit => postit.id !== id) //???
+
+                users[index].postits.push(postits)
 
                 json = JSON.stringify(users)
 

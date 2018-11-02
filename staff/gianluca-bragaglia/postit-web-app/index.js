@@ -5,6 +5,7 @@ const FileStore = require('session-file-store')(session)
 const bodyParser = require('body-parser')
 const logic = require('./logic')
 const package = require('./package.json')
+const override = require('express-method-override')
 
 const { argv: [, , port = process.env.PORT || 8080] } = process
 
@@ -12,6 +13,7 @@ const app = express()
 
 app.use(express.static('./public'))
 app.set('view engine', 'pug')
+app.use(override("_method"))
 
 const formBodyParser = bodyParser.urlencoded({ extended: false })
 
@@ -98,6 +100,30 @@ app.get('/home', (req, res) => {
                     req.session.error = message
 
                     res.redirect('/')
+                })
+        } catch ({ message }) {
+            req.session.error = message
+
+            res.redirect('/')
+        }
+    } else res.redirect('/')
+})
+
+app.post('/home', (req, res) => {
+    const id = req.session.userId
+
+    const {text} = req.body
+    if (id) {
+        try {
+            logic.retrieveUser(id)
+                .then(() => res.render('home'))
+                .then((id,text) => {
+                    user.savePostit(id, text)
+                })
+                .catch(({ message }) => {
+                    req.session.error = message
+
+                    res.redirect('/home')
                 })
         } catch ({ message }) {
             req.session.error = message
