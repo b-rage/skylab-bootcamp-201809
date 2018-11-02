@@ -38,9 +38,25 @@ class User {
         users[index].postits.push(postit)
 
         json = JSON.stringify(users)
-       debugger
+ 
         fs.writeFileSync(User._file, json)
 
+    }
+
+    deletePostit(userId, id) {
+        let json = fs.readFileSync(User._file)
+
+        const users = JSON.parse(json)
+
+        const index = users.findIndex(user => user.id === userId)
+
+        const postits = users[index].postits.find(postit => postit.id !== id) //???
+
+        users[index].postits.push(postits)
+
+        json = JSON.stringify(users)
+ 
+        fs.writeFileSync(User._file, json)
     }
 
     static findByUsername(username) {

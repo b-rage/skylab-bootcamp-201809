@@ -7,14 +7,14 @@ const FileStore = sessionFileStore(session)
 const bodyParser = require('body-parser')
 const buildView = require('./helpers/build-view')
 const logic = require('./logic')
-//const override = require('express-method-override')
+const override = require('express-method-override')
 
 const { argv: [, , port = process.env.PORT || 8080] } = process
 
 const app = express()
 
 app.use(express.static('./public'))
-app.use(require('express-method-override')('method_override_param_name'))
+app.use(override("_method"))
 let error = null
 
 const formBodyParser = bodyParser.urlencoded({ extended: false })
@@ -103,11 +103,10 @@ app.get('/home', mySession, (req, res) => {
                                     <textarea name="text" type="text" placeholder="Write text here..."></textarea>
                                     <button type="submit">send</button>
                                 </form>
-                                <form action="/home" method="POST">
+                                <form action="/home?_method=PUT" method="POST">
                                 ${user.postits.map(postit => {
-                                    return `<div>${postit.text} <button type="submit" value="${postit.id}">x</button></div>`
+                                    return `<div>${postit.text} <button type="submit" name="postitListItem" value="${postit.id}">x</button></div>`
                                 }).join('')}
-                                <input type="hidden" name="_method" value="put" />
                                 </form>
                                 <a href="/logout">logout</a>`))
                                 
@@ -124,18 +123,26 @@ app.post('/home', [formBodyParser, mySession], (req, res) => {
     user.savePostit(id, text)
 
     res.redirect('/home')
-
-   
+  
 })
 
-app.put('/home', (req, res) => {
-    console.log('hooo')
+app.put('/home', [formBodyParser, mySession], (req, res) => {
+    const id = req.session.userId
+
+    const {postitListItem} = req.body
+
+    const user = logic.retrieveUser(id) 
+
+    user.deletePostit(id, postitListItem)
+
+    res.redirect('/home')
+
+    
+  
 })
-
-
 
 app.get('/logout', mySession, (req, res) => {
-    req.session.userId = null
+    req.session = null
 
     res.redirect('/')
 })
