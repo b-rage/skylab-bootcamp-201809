@@ -1,0 +1,11 @@
+extends layout
+block content
+      form(action='/register', method='POST')
+        input(type='text', name='name', placeholder='Name')
+        input(type='text', name='surname', placeholder='Surname')
+        input(type='text', name='username', placeholder='username')
+        input(type='password', name='password', placeholder='password')
+        button(type='submit') Register
+      if error
+        p(class='error') #{error}
+      a(href='/') go back

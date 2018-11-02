@@ -1,0 +1,9 @@
+extends layout
+block content
+      form(action='/login', method='POST')
+        input(type='text', name='username', placeholder='username')
+        input(type='password', name='password', placeholder='password')
+        button(type='submit') Login
+      if error
+        p(class='error') #{error}
+      a(href='/') go back
