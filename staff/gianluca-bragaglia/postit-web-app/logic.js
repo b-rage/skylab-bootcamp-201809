@@ -54,7 +54,7 @@ const logic = {
             })
     },
 
-    createPostit(id, text) {
+    createPostit(postitId, text) {
         
        
         return User.findById(id)
@@ -69,7 +69,8 @@ const logic = {
                         
                     // })
                     .then((user) => {
-                        user.savePostit(text)
+                        user.savePostit(text ,postitId)
+
                     })
     }
 }

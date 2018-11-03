@@ -7,6 +7,7 @@ const logic = require('./logic')
 const package = require('./package.json')
 const override = require('express-method-override')
 
+
 const { argv: [, , port = process.env.PORT || 8080] } = process
 
 const app = express()
@@ -91,11 +92,11 @@ app.post('/login', formBodyParser, (req, res) => {
 
 app.get('/home', (req, res) => {
     const id = req.session.userId
-
+   
     if (id) {
         try {
             logic.retrieveUser(id)
-                .then(({ name }) => res.render('home', { name }))
+                .then(({ name, postits }) => res.render('home', { name, postits }))
                 .catch(({ message }) => {
                     req.session.error = message
 
@@ -109,8 +110,10 @@ app.get('/home', (req, res) => {
     } else res.redirect('/')
 })
 
-app.post('/home', formBodyParser, (req, res) => {
 
+
+app.post('/home', formBodyParser, (req, res) => {
+     
     const id = req.session.userId
 
     const { text } = req.body
@@ -118,7 +121,7 @@ app.post('/home', formBodyParser, (req, res) => {
     
     if (id) {
         try {                
-            logic.createPostit(id,text)
+            logic.createPostit(text)
 
             res.redirect('/home')
                 

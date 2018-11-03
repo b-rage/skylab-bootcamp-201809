@@ -1,10 +1,8 @@
 extends layout
 block content
-    p Welcome #{name}!
+    p Welcome #{name}
     form(action='/home', method='POST')
         textarea(name='text', type='text', placeholder='Write text here...')
         button(type='submit') send  
-    each val in [1,2,3,4]!
-        p= val
-    
+    - postits.map(postit => {`<div>${postit.text} <button type="submit" name="postitListItem" value="${postit.id}">x</button></div>`}).join('') 
     a(href='/logout') logout

@@ -46,7 +46,7 @@ class User {
 
                 const index = users.findIndex(user => user.id === this.id)
                  
-                const postit = {id:Date.now(), text: text}
+                const postit = {postitId:Date.now(), text: text}
 
                 users[index].postits.push(postit)
 
