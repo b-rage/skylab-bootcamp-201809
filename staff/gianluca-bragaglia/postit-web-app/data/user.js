@@ -36,15 +36,16 @@ class User {
         })
     }
 
-    savePostit(id,text) {
+    savePostit(text) {
         return new Promise((resolve, reject) => {
+            
             fs.readFile(User._file, (err, json) => {
                 if (err) return reject(err)
 
                 const users = JSON.parse(json)
 
-                const index = users.findIndex(user => user.id === id)
-
+                const index = users.findIndex(user => user.id === this.id)
+                 
                 const postit = {id:Date.now(), text: text}
 
                 users[index].postits.push(postit)

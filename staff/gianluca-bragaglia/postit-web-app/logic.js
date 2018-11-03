@@ -52,6 +52,13 @@ const logic = {
 
                 return _user
             })
+    },
+
+    savePostit(text) {
+        console.log('savepos' + id + text)
+        
+        return User.findById(id)
+                    .then(() => User.savePostit(text))
     }
 }
 

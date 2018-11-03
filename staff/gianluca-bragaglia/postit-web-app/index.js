@@ -109,17 +109,17 @@ app.get('/home', (req, res) => {
     } else res.redirect('/')
 })
 
-app.post('/home', (req, res) => {
+app.post('/home', formBodyParser, (req, res) => {
+
     const id = req.session.userId
 
-    const {text} = req.body
+    const { text } = req.body
+    
+    
     if (id) {
         try {
-            logic.retrieveUser(id)
-                .then(() => res.render('home'))
-                .then((id,text) => {
-                    user.savePostit(id, text)
-                })
+            logic.retrieveUser(id)        
+                .then(() => logic.savePostit(text))
                 .catch(({ message }) => {
                     req.session.error = message
 
