@@ -54,11 +54,23 @@ const logic = {
             })
     },
 
-    savePostit(text) {
-        console.log('savepos' + id + text)
+    createPostit(id, text) {
         
+       
         return User.findById(id)
-                    .then(() => User.savePostit(text))
+                    // .then(user => {    
+                        
+                    //     const postit = {id:Date.now(), text: text}
+                    //     const postits = user.postits
+                    //     console.log(postits);
+                        
+                    //     postits.push(postit)
+                    //     user.save()
+                        
+                    // })
+                    .then((user) => {
+                        user.savePostit(text)
+                    })
     }
 }
 

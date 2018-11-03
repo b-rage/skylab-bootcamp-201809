@@ -62,7 +62,7 @@ class User {
     }
 
     
-    deletePostit(userId, id) {
+    /* deletePostit(userId, id) {
         return new Promise((resolve, reject) => {
             fs.readFile(User._file, (err, json) => {
                 if (err) return reject(err)
@@ -84,7 +84,7 @@ class User {
                 })
             })
         })
-    }
+    } */
 
     toObject() {
         const { name, surname, username, password } = this

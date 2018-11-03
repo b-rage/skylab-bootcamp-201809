@@ -117,14 +117,11 @@ app.post('/home', formBodyParser, (req, res) => {
     
     
     if (id) {
-        try {
-            logic.retrieveUser(id)        
-                .then(() => logic.savePostit(text))
-                .catch(({ message }) => {
-                    req.session.error = message
+        try {                
+            logic.createPostit(id,text)
 
-                    res.redirect('/home')
-                })
+            res.redirect('/home')
+                
         } catch ({ message }) {
             req.session.error = message
 
