@@ -54,24 +54,54 @@ const logic = {
             })
     },
 
-    createPostit(postitId, text) {
-        
-       
-        return User.findById(id)
-                    // .then(user => {    
-                        
-                    //     const postit = {id:Date.now(), text: text}
-                    //     const postits = user.postits
-                    //     console.log(postits);
-                        
-                    //     postits.push(postit)
-                    //     user.save()
-                        
-                    // })
-                    .then((user) => {
-                        user.savePostit(text ,postitId)
+    savePostit(userId, body) {
+        if (typeof userId !== 'number') throw TypeError(`${userId} is not a number`)
+        if (typeof body !== 'string') throw TypeError(`${body} is not a string`)
+        if (!body.trim()) throw Error('postit body is empty or blank')
 
-                    })
+        const postit = {id: Date.now(), body: body}
+        return User.findById(userId)
+            .then(user => {
+               
+                user.postits.push(postit)
+        
+                return user.save()
+            })
+    },
+
+    updatePostit(userId, postitId, body){
+        if (typeof userId !== 'number') throw TypeError(`${userId} is not a number`)
+        if (typeof postitId !== 'number') throw TypeError(`${postitId} is not a number`)
+        if (typeof body !== 'string') throw TypeError(`${body} is not a string`)
+        if (!body.trim()) throw Error('postit body is empty or blank')
+
+        return User.findById(userId)
+        .then(user => {
+            const index = user.postits.findIndex(postit => postit.id === postitId)
+            
+            user.postits[index].body = body
+        
+            return user.save()
+        })
+
+    },
+
+    deletePostit(userId, postitId) {
+        if (typeof userId !== 'number') throw TypeError(`${userId} is not a number`)
+        if (typeof postitId !== 'number') throw TypeError(`${postitId} is not a number`)
+        return User.findById(userId)
+            .then(user => {
+                const index = user.postits.findIndex(postit => postit.id === postitId)
+                let pos1 = user.postits.slice(0, index)
+                let pos2 = user.postits.slice(index + 1)
+        
+                let _postits = pos1.concat(pos2)
+        
+                user.postits = _postits
+        
+                return user.save()
+            })
+
     }
 }
 

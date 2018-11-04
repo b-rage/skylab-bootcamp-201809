@@ -1,8 +1,6 @@
 extends layout
 block content
-    p Welcome #{name}
-    form(action='/home', method='POST')
-        textarea(name='text', type='text', placeholder='Write text here...')
-        button(type='submit') send  
-    - postits.map(postit => {`<div>${postit.text} <button type="submit" name="postitListItem" value="${postit.id}">x</button></div>`}).join('') 
-    a(href='/logout') logout
+      p Welcome #{name.toUpperCase()}!
+      a(href='/postits') Go to my postits
+      br
+      a(href='/logout') Log out

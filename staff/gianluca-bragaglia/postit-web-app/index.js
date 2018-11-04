@@ -96,7 +96,7 @@ app.get('/home', (req, res) => {
     if (id) {
         try {
             logic.retrieveUser(id)
-                .then(({ name, postits }) => res.render('home', { name, postits }))
+                .then(({ name }) => res.render('home', { name }))
                 .catch(({ message }) => {
                     req.session.error = message
 
@@ -112,25 +112,111 @@ app.get('/home', (req, res) => {
 
 
 
-app.post('/home', formBodyParser, (req, res) => {
-     
+app.get('/postits', (req, res) => {
     const id = req.session.userId
 
-    const { text } = req.body
-    
-    
     if (id) {
-        try {                
-            logic.createPostit(text)
-
-            res.redirect('/home')
-                
+        try {
+            logic.retrieveUser(id)
+                .then(user => {
+                    res.render('postits', { error: req.session.error, user: user, postits: user.postits })
+                })
+                .catch(({ message }) => {
+                    req.session.error = message
+                    res.redirect('/')
+                })
         } catch ({ message }) {
             req.session.error = message
 
             res.redirect('/')
         }
+
     } else res.redirect('/')
+})
+
+app.post('/postits', formBodyParser, (req, res) => {
+    const { body, type, postitId } = req.body
+
+    const userId = req.session.userId
+    switch (type) {
+        case 'create':
+            try {
+                logic.savePostit(userId, body)
+                    .then(() => {
+                        res.redirect('/postits')
+                    })
+                    .catch(({ message }) => {
+                        req.session.error = message
+                        res.redirect('/postits')
+                    })
+
+            } catch ({ message }) {
+
+                req.session.error = message
+
+                res.redirect('/postits')
+            }
+            break
+        case 'delete':
+            try {
+                logic.deletePostit(userId, Number(postitId))
+                    .then(() => {
+                        res.redirect('/postits')
+                    })
+                    .catch(({ message }) => {
+                        req.session.error = message
+                        res.redirect('/postits')
+                    })
+
+            } catch ({ message }) {
+                req.session.error = message
+
+                res.redirect('/postits')
+            }
+            break
+        case 'update':
+            try {
+                logic.updatePostit(userId, Number(postitId), body)
+                    .then(() => {
+                        res.redirect('/postits')
+                    })
+                    .catch(({ message }) => {
+                        req.session.error = message
+                        res.redirect('/postits')
+                    })
+
+            } catch ({ message }) {
+
+                req.session.error = message
+
+                res.redirect('/postits')
+            }
+            break
+    }
+})
+
+app.get('/deletePostit:id', (req, res) => {
+    const { postitId } = req.params.id
+
+    const userId = req.session.userId
+
+    try {
+        logic.deletePostit(userId, postitId)
+            .then(() => {
+                res.redirect('/postits')
+            })
+            .catch(({ message }) => {
+                req.session.error = message
+                res.redirect('/postits')
+            })
+
+    } catch ({ message }) {
+
+        req.session.error = message
+
+        res.redirect('/postits')
+    }
+
 })
 
 app.get('/logout', (req, res) => {
