@@ -1,0 +1,28 @@
+
+extends layout
+block content
+    p #{user.name.toUpperCase()}'s postits!
+    form(action='/postits', method='POST')
+      input(type='hidden', name='type', value='create')
+      input(type='text', name='body', placeholder='Write here...')
+      button(class='button' type='submit') Create Postit
+    if error 
+      p(class='error') #{error}
+    div(class='container')
+        if postits
+          each postit in postits
+            div
+              form(action='/postits', method='POST')
+                input(type='hidden', name='type', value='update')
+                input(type='hidden', name='postitId', value= postit.id)
+                textarea(name='body')= postit.body
+                br
+                button(type='submit' class='button') Update
+              form(action='/postits', method='POST')
+                input(type='hidden', name='type', value='delete')
+                input(type='hidden', name='postitId', value= postit.id)
+                br
+                button(type='submit' class='button') Delete
+    a(href='/home') Go to home
+    br
+    a(href='/logout') Log out
