@@ -4,7 +4,6 @@ block content
     form(action='/home', method='POST')
         textarea(name='text', type='text', placeholder='Write text here...')
         button(type='submit') send  
-    each val in [1,2,3,4]!
-        p= val
+
     
     a(href='/logout') logout

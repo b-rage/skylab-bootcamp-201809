@@ -58,20 +58,18 @@ const logic = {
         
        
         return User.findById(id)
-                    // .then(user => {    
+                    .then(user => {    
                         
-                    //     const postit = {id:Date.now(), text: text}
-                    //     const postits = user.postits
-                    //     console.log(postits);
+                        const postit = {id:Date.now(), text: text}
+                        const postits = user.postits                     
+                        postits.push(postit)
+                        user.save()
                         
-                    //     postits.push(postit)
-                    //     user.save()
-                        
-                    // })
-                    .then((user) => {
-                        user.savePostit(text)
                     })
-    }
+    //                 .then((user) => {
+    //                     user.savePostit(text)
+    //                 })
+º   }
 }
 
 module.exports = logic
