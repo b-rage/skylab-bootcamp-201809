@@ -1,0 +1,26 @@
+extends layout
+block content
+      p Welcome #{name}!
+      a(href='/logout') logout
+      form(method='POST', action='/postits')
+        input(type='text', name='text')
+        button(type='submit', value='add', name='operation') Add
+      if error
+        p(class='error') #{error}
+      if postits.length  
+        ul
+          each postit in postits
+            li
+              if (postitId != postit.id)
+                | #{postit.text}
+                form(method='POST', action='/postits')
+                  input(type='hidden', value=postit.id, name='postitId')
+                  button(type='submit', value='edit', name='operation') Edit
+                  button(type='submit', value='remove', name='operation') Remove
+              else
+                form(method='POST', action='/postits')
+                   input(type='text', value=postit.text, name='text')
+                   input(type='hidden', value=postit.id, name='postitId')
+                   button(type='submit', value='save', name='operation') Save
+                   button(type='submit', value='remove', name='operation') Remove
+        
