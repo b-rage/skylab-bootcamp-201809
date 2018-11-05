@@ -122,6 +122,30 @@ const logic = {
 
                 return user.save()
             })
+    },
+
+    modifyPostit(id, postitId, text) {
+        if (typeof id !== 'number') throw TypeError(`${id} is not a number`)
+        if (typeof postitId !== 'number') throw TypeError(`${postitId} is not a number`)
+
+        if(typeof text !== 'string') throw TypeError(`${text} is not a string`)
+
+        if (!text.trim().length) throw Error('text is empty or blank')
+
+        return User.findById(id)
+            .then(user => {
+                if (!user) throw Error(`user with id ${id} not found`)
+
+                const { postits } = user
+
+                const postit = postits.find(postit => postit.id === postitId)
+
+                if (!postit) throw Error(`postit with id ${postitId} not found in user with id ${id}`)
+
+                postit.text = text
+
+                return user.save()
+            })
     }
 }
 

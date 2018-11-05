@@ -28,7 +28,7 @@ class User {
 
                 json = JSON.stringify(users)
 
-                fs.writeFile(User._file, json, (err) => {
+                fs.writeFile(User._file, json, err => {
                     if (err) return reject(err)
 
                     resolve()
@@ -62,6 +62,7 @@ class User {
             fs.readFile(User._file, (err, json) => {
                 if (err) return reject(err)
 
+                debugger
                 const users = JSON.parse(json)
 
                 const user = users.find(user => user.id === id)

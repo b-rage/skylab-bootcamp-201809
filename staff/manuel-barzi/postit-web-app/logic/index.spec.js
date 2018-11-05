@@ -15,6 +15,8 @@ describe('logic', () => {
 
     beforeEach(() => fs.writeFileSync(User._file, JSON.stringify([])))
 
+    afterEach(() => fs.writeFileSync(User._file, JSON.stringify([])))
+
     describe('user', () => {
         describe('register', () => {
             let name, surname, username, password
@@ -166,7 +168,7 @@ describe('logic', () => {
                 fs.writeFileSync(User._file, JSON.stringify([user]))
             })
 
-            it('should succeed on correct data', () => {
+            it('should succeed on correct data', () =>
                 logic.removePostit(user.id, postit.id)
                     .then(() => {
                         const json = fs.readFileSync(User._file)
@@ -183,7 +185,43 @@ describe('logic', () => {
 
                         expect(postits.length).to.equal(0)
                     })
+            )
+        })
+
+        describe('modify', () => {
+            let user, postit, newText
+
+            beforeEach(() => {
+                postit = new Postit('hello text')
+                user = new User({ name: 'John', surname: 'Doe', username: 'jd', password: '123', postits: [postit] })
+
+                newText = `new-text-${Math.random()}`
+
+                fs.writeFileSync(User._file, JSON.stringify([user]))
             })
+
+            it('should succeed on correct data', () =>
+                logic.modifyPostit(user.id, postit.id, newText)
+                    .then(() => {
+                        const json = fs.readFileSync(User._file)
+
+                        const users = JSON.parse(json)
+
+                        expect(users.length).to.equal(1)
+
+                        const [_user] = users
+
+                        expect(_user.id).to.equal(user.id)
+
+                        const { postits } = _user
+
+                        expect(postits.length).to.equal(1)
+
+                        const [postit] = postits
+
+                        expect(postit.text).to.equal(newText)
+                    })
+            )
         })
     })
 })

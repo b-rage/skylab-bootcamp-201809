@@ -71,7 +71,10 @@ app.post('/login', formBodyParser, (req, res) => {
             .then(id => {
                 req.session.userId = id
 
-                req.session.error = null
+                //req.session.error = null
+                delete req.session.error
+
+                delete req.session.postitId
 
                 res.redirect('/home')
             })
@@ -122,7 +125,11 @@ app.post('/postits', formBodyParser, (req, res) => {
                 const { text } = req.body
 
                 logic.addPostit(req.session.userId, text)
-                    .then(() => res.redirect('/home'))
+                    .then(() => {
+                        delete req.session.error
+
+                        res.redirect('/home')
+                    })
                     .catch(({ message }) => {
                         req.session.error = message
 
@@ -147,8 +154,25 @@ app.post('/postits', formBodyParser, (req, res) => {
 
                     req.session.postitId = postitId
                 }
-                
+
                 res.redirect('/home')
+                break
+            case 'save':
+                {
+                    const { postitId, text } = req.body
+
+                    logic.modifyPostit(req.session.userId, Number(postitId), text)
+                        .then(() => {
+                            delete req.session.postitId
+
+                            res.redirect('/home')
+                        })
+                        .catch(({ message }) => {
+                            req.session.error = message
+
+                            res.redirect('/home')
+                        })
+                }
                 break
             default:
                 res.redirect('/home')
