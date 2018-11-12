@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-const mongoose = require('mongoose')
+const { MongoClient } = require('mongodb')
 const { User, Postit } = require('../data')
 const logic = require('.')
 const { AlreadyExistsError } = require('../errors')
@@ -10,13 +10,26 @@ const { expect } = require('chai')
 const { env: { MONGO_URL } } = process
 
 // running test from CLI
-// normal -> $ mocha logic/index.spec.js --timeout 10000
+// normal -> $ mocha src/logic.spec.js --timeout 10000
 // debug -> $ mocha debug src/logic.spec.js --timeout 10000
 
 describe('logic', () => {
-    before(() => mongoose.connect(MONGO_URL, { useNewUrlParser: true }))
+    let client, users
 
-    beforeEach(() => User.deleteMany())
+    before(() => {
+        client = new MongoClient(MONGO_URL, { useNewUrlParser: true })
+
+        return client.connect()
+            .then(() => {
+                const db = client.db('postit-test')
+
+                users = db.collection('users')
+
+                User._collection = users
+            })
+    })
+
+    beforeEach(() => users.deleteMany())
 
     describe('user', () => {
         describe('register', () => {
@@ -31,7 +44,7 @@ describe('logic', () => {
 
             it('should succeed on correct data', () =>
                 logic.registerUser(name, surname, username, password)
-                    .then(() => User.find())
+                    .then(() => users.find().toArray())
                     .then(_users => {
                         expect(_users.length).to.equal(1)
 
@@ -56,22 +69,20 @@ describe('logic', () => {
             let user
 
             beforeEach(() => {
+                user = new User({ name: 'John', surname: 'Doe', username: 'jd', password: '123' })
 
-                user = new User({ name: 'John', surname: 'Doe', username: 'jd', password: '123'})
-
-                return User.create({ name: user.name, surname: user.surname, username: user.username, password: user.password })
+                return users.insertOne(user)
             })
 
             it('should authenticate on correct credentials', () => {
                 const { username, password } = user
 
                 return logic.authenticateUser(username, password)
-                    .then(_id => {
-                        id = _id.toString()
-                        expect(id).to.exist                     
+                    .then(id => {
+                        expect(id).to.exist
                         expect(id).to.be.a('string')
-                        
-                        return User.find()
+
+                        return users.find().toArray()
                             .then(_users => {
                                 const [_user] = _users
 
@@ -374,5 +385,5 @@ describe('logic', () => {
         })
     })
 
-    after(() => mongoose.disconnect())
+    after(() => client.close())
 })
