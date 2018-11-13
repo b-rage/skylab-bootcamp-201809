@@ -113,34 +113,6 @@ describe('logic', () => {
             })
         })
 
-        describe('retrieve users', () => {
-            let users 
-
-            beforeEach(async () => {
-                const user = new User({ name: 'John', surname: 'Doe', username: 'jd', password: '123' })
-                const user2 = new User({ name: 'John4', surname: 'Doe44', username: 'jd4', password: '1234' })
-
-                await user.save()
-                await user2.save()
-            })
-
-            it('should succeed on valid id', async () => {
-                const _users = await logic.retrieveUsers()
-
-
-                users = _users
-
-                expect(id).to.exist
-                expect(id).to.be.a('string')
-                expect(id).to.equal(user.id)
-                expect(name).to.equal(user.name)
-                expect(surname).to.equal(user.surname)
-                expect(username).to.equal(user.username)
-                expect(password).to.be.undefined
-                expect(postits).not.to.exist
-            })
-        })
-
         describe('update', () => {
             let user
 

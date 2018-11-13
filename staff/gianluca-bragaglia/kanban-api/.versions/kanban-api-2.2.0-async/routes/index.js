@@ -60,19 +60,6 @@ router.get('/users/:id', [bearerTokenParser, jwtVerifier], (req, res) => {
     }, res)
 })
 
-
-router.get('/users', [bearerTokenParser, jwtVerifier], (req, res) => {
-    routeHandler(() => {
-
-        return logic.retrieveUsers()
-            .then(users =>
-                res.json({
-                    data: users
-                })
-            )
-    }, res)
-})
-
 router.patch('/users/:id', [bearerTokenParser, jwtVerifier, jsonBodyParser], (req, res) => {
     routeHandler(() => {
         const { params: { id }, sub, body: { name, surname, username, newPassword, password } } = req

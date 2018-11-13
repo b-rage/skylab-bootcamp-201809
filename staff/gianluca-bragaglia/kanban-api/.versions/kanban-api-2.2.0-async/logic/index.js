@@ -46,25 +46,13 @@ const logic = {
         if (!id.trim().length) throw new ValueError('id is empty or blank')
 
         return (async () => {
-            const user = await User.findById(id, { '_id': 0, password: 0, __v: 0 }).lean()
+            const user = await User.findById(id, { '_id': 0, password: 0, postits: 0, __v: 0 }).lean()
 
             if (!user) throw new NotFoundError(`user with id ${id} not found`)
 
             user.id = id
 
             return user
-        })()
-    },
-
-    retrieveUsers() {
-
-        return (async () => {
-            const users = await User.find().lean()
-
-            if (!users) throw new NotFoundError(`users not found`)
-
-            return users
-
         })()
     },
 
