@@ -9,6 +9,10 @@ const Postit = new Schema({
         type: ObjectId,
         ref: 'User',
         required: true
+    },
+    status: {
+        type: String,
+        required: true
     }
 })
 
