@@ -38,7 +38,7 @@ class Profile extends Component {
 
         return<div className='profile-container'>
             <div className='profile-container-left'>
-            <img className="post__img" src={this.state.img} ></img>
+            <img className="profile-img" src={this.state.img} ></img>
             <button onClick={this.uploadWidget} className="btn-logout">Add Image</button>
             </div>
             <div className='profile-container-right'>
