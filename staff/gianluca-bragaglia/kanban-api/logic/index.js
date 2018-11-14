@@ -122,9 +122,6 @@ const logic = {
             if (user.password !== password) throw new AuthError('invalid password')
 
             if (username) {
-                const _user = await User.findOne({ username })
-
-                if (_user) throw new AlreadyExistsError(`username ${username} already exists`)
 
                 name != null && (user.name = name)
                 surname != null && (user.surname = surname)

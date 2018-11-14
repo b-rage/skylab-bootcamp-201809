@@ -69,6 +69,55 @@ const logic = {
         sessionStorage.removeItem('token')
     },
 
+    getUser() {
+        let id = this._userId
+
+        if (typeof id !== 'string') throw new TypeError(`${id} is not a string`)
+
+        if (!id.trim().length) throw Error('id is empty or blank')
+
+        return fetch(`${this.url}/users/${this._userId}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8',
+                'Authorization': `Bearer ${this._token}`
+            }
+        })
+            .then(res => res.json())
+            .then(res => {
+                
+                if (res.error) throw Error(res.error)
+                return res.data
+            })
+    },
+
+    modifyUser(name, surname, username, newPassword, password) {
+        if (typeof name !== 'string') throw TypeError(`${name} is not a string`)
+        if (typeof surname !== 'string') throw TypeError(`${surname} is not a string`)
+        if (typeof username !== 'string') throw TypeError(`${username} is not a string`)
+        if (typeof password !== 'string') throw TypeError(`${password} is not a string`)
+        if (typeof newPassword !== 'string') throw TypeError(`${newPassword} is not a string`)
+
+        if (!name.trim()) throw Error('name is empty or blank')
+        if (!surname.trim()) throw Error('surname is empty or blank')
+        if (!username.trim()) throw Error('username is empty or blank')
+        if (!password.trim()) throw Error('password is empty or blank')
+        if (!newPassword.trim()) throw Error('password is empty or blank')
+
+        return fetch(`${this.url}/users/${this._userId}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8',
+                'Authorization': `Bearer ${this._token}`
+            },
+            body: JSON.stringify({ name, surname, username, newPassword, password })
+        })
+            .then(res => res.json())
+            .then(res => {
+                if (res.error) throw Error(res.error)
+            })
+    },
+
     addPostit(text, status) {
      
         if (typeof text !== 'string') throw TypeError(`${text} is not a string`)

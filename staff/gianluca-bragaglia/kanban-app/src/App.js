@@ -7,6 +7,8 @@ import Login from './components/Login'
 import Postits from './components/Postits'
 import Error from './components/Error'
 import Landing from './components/Landing'
+import Profile from './components/Profile'
+import EditProfile from './components/EditProfile'
 
 
 logic.url = 'http://localhost:5000/api'
@@ -23,6 +25,18 @@ class App extends Component {
             logic.registerUser(name, surname, username, password)
                 .then(() => {
                     this.setState({ error: null }, () => this.props.history.push('/login'))
+                })
+                .catch(err => this.setState({ error: err.message }))
+        } catch (err) {
+            this.setState({ error: err.message })
+        }
+    }
+
+    handleEditProfile = (name, surname, username,  newPassword, password) => {
+        try {
+            logic.modifyUser(name, surname, username,  newPassword, password)
+                .then(() => {
+                    this.setState({ error: null }, () => this.props.history.push('/profile'))
                 })
                 .catch(err => this.setState({ error: err.message }))
         } catch (err) {
@@ -48,6 +62,8 @@ class App extends Component {
         this.props.history.push('/')
     }
 
+    handleProfileClick = () => this.props.history.push('/profile')   
+
     handleGoBack = () => this.props.history.push('/')
 
     render() {
@@ -69,8 +85,12 @@ class App extends Component {
             <Route path="/postits" render={() => logic.loggedIn ? 
                 <div className='logout-container'>
                     <section><button className='btn-logout' onClick={this.handleLogoutClick}>Logout</button></section>
+                    <br></br>
+                    <section><button className='btn-logout' onClick={this.handleProfileClick}>Profile</button></section>
                     <Postits />
                 </div> : <Redirect to="/" />} />
+            <Route path="/profile" render={() => logic.loggedIn ? <Profile /> : <Redirect to="/login" />} />
+            <Route path="/edit" render={() => logic.loggedIn ? <EditProfile onEditProfile={this.handleEditProfile} /> : <Redirect to="/login" />} />
 
         </div>
     }

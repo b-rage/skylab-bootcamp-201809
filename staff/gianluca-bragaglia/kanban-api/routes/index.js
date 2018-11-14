@@ -73,9 +73,9 @@ router.get('/users', [bearerTokenParser, jwtVerifier], (req, res) => {
     }, res)
 })
 
-router.patch('/users/:id/postits/:postitId/asign', [bearerTokenParser, jwtVerifier, jsonBodyParser], (req, res) => {
+router.patch('/users/:id/postits/:postitId/assign', [bearerTokenParser, jwtVerifier, jsonBodyParser], (req, res) => {
     routeHandler(() => {
-        const { sub, params: { id, postitId }, body: { colaborator } } = req
+        const { sub, params: { id, postitId }, body: { collaborator } } = req
 
         if (id !== sub) throw Error('token sub does not match user id')
 

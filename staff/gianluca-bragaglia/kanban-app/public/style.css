@@ -205,6 +205,31 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
    
 }
 
+.profile-container{
+    display: flex;
+    justify-content: space-around;
+    margin: 40px auto;
+    width: 80%;
+}
+
+.profile-container-left{
+    margin: 0 auto;
+    width: 320px;
+
+}
+
+.profile-container-right{
+    margin: 0 auto;
+    width: 320px;
+
+}
+
+.profile-info{
+    color: #2B3E50;
+    font-size: 17px;
+    text-transform: capitalize;
+}
+
 @media only screen and (max-width: 1000px) {
     .postits-container {
         margin-top: 50px;
