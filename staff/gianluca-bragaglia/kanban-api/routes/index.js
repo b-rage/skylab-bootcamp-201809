@@ -73,6 +73,33 @@ router.get('/users', [bearerTokenParser, jwtVerifier], (req, res) => {
     }, res)
 })
 
+router.patch('/users/:id/postits/:postitId/asign', [bearerTokenParser, jwtVerifier, jsonBodyParser], (req, res) => {
+    routeHandler(() => {
+        const { sub, params: { id, postitId }, body: { colaborator } } = req
+
+        if (id !== sub) throw Error('token sub does not match user id')
+
+        return logic.assignPostit(id, postitId, collaborator)
+            .then(() => res.json({
+                message: 'postit assigned'
+            }))
+    }, res)
+})
+
+router.post('/users/:id/collaborator', [bearerTokenParser, jwtVerifier, jsonBodyParser], (req, res) => {
+    routeHandler(() => {
+        const { sub, params: { id }, body: { colaborator } } = req
+
+        if (id !== sub) throw Error('token sub does not match user id')
+
+        return logic.addCollaborator(id, colaborator)
+            .then(() => res.json({
+                message: 'collaborator added'
+            }))
+
+    }, res)
+})
+
 router.patch('/users/:id', [bearerTokenParser, jwtVerifier, jsonBodyParser], (req, res) => {
     routeHandler(() => {
         const { params: { id }, sub, body: { name, surname, username, newPassword, password } } = req

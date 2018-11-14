@@ -63,9 +63,40 @@ const logic = {
 
             if (!users) throw new NotFoundError(`users not found`)
 
+            users.forEach(user => {
+
+                delete user._id
+                delete user.__v
+                delete user.password
+
+            })
+
             return users
 
         })()
+    },
+
+
+    addCollaborator(id, username) {
+        if (typeof id !== 'string') throw TypeError(`${id} is not a string`)
+        if (username != null && typeof username !== 'string') throw TypeError(`${username} is not a string`)
+
+        if (!id.trim().length) throw new ValueError('id is empty or blank')
+        if (username != null && !username.trim().length) throw new ValueError('username is empty or blank')
+
+        return (async () => {
+
+            const user = await User.findById(id)
+            if (!user) throw new NotFoundError(`user with id ${id} not found`)
+
+            const friend = await User.findOne({username}).lean()
+            if (!friend) throw new NotFoundError(`user with username ${username} not found`)
+            
+            user.collaborators.push(friend._id)
+
+            await user.save()
+        })()
+
     },
 
     updateUser(id, name, surname, username, newPassword, password) {
@@ -229,7 +260,40 @@ const logic = {
 
             await postit.save()
         })()
-    }
+    },
+
+    asignPostit(id, postitId, username) {
+        if (typeof id !== 'string') throw TypeError(`${id} is not a string`)
+
+        if (!id.trim().length) throw new ValueError('id is empty or blank')
+
+        if (typeof postitId !== 'string') throw TypeError(`${postitId} is not a string`)
+
+        if (!postitId.trim().length) throw new ValueError('postit id is empty or blank')
+        
+        if (typeof username !== 'string') throw TypeError(`${username} is not a string`)
+
+        if (!username.trim().length) throw new ValueError('username is empty or blank')
+
+        return (async () => {
+            const user = await User.findById(id)
+
+            if (!user) throw new NotFoundError(`user with id ${id} not found`)
+
+            const postit = await Postit.findById(postitId)
+
+            if (!postit) throw new NotFoundError(`postit with id ${id} not found`)
+
+            const friend = await User.findOne({username})
+
+            if (!friend) throw new NotFoundError(`user with username ${username} not found`)
+
+            postit.asigned = friend._id
+
+            await postit.save()
+        })()
+
+    },
 }
 
 module.exports = logic
