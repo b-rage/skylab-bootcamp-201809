@@ -877,8 +877,8 @@ describe('logic', () => {
             
             beforeEach(async () => {
                 user = new User({ email: 'Johnm@jon.com', username: 'jdmakk', password: '123' })
-                user2 = new User({ email: 'Johm2n@jon.com', username: 'jdm2kk', password: '1232' })
-
+                user2 = new User({ email: 'Johm2n@jon.com', username: 'jdm2kk', password: '1232' })      
+                
                 user.follows.length = 1
 
                 await user.save()
@@ -894,8 +894,6 @@ describe('logic', () => {
                 const _user = await User.findById(user.id)
 
                 expect(_user.follows.length).to.equal(1)
-                
-
                 
             })
 
