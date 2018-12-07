@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The application allows its use by registering users. The user can upload their vinyls, follow other users, likes vinyls, add comment to vinyls.
+The application allows to register users. The user can upload their vinyls, follow other users, likes vinyls, add comment to vinyls.
 
 You can also search for users and search for vinyls
 
@@ -27,7 +27,7 @@ The application has one main activity: publish your vinyls, and other cativities
 ## TECHNICAL DESCRIPTION
 
 ## Block diagram
-The front end of the application was built using React. The back end is connected to an API that is connected to data module DATA for make change on the Database(CRUD)
+The front end of the application was built using React. The back end is connected to an API that is connected to data module DATA to update the Database(CRUD)
 
 ![Block Diagram](images/block-diagram.png)
 

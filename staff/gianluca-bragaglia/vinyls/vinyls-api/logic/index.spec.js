@@ -894,6 +894,7 @@ describe('logic', () => {
                 const _user = await User.findById(user.id)
 
                 expect(_user.follows.length).to.equal(1)
+                
 
                 
             })
