@@ -46,7 +46,7 @@ class AddVinylImage extends Component {
         { this.state.imgAdded && <p className='image-added'>Image Added Succefully</p>}
         <Button type='submit' color='black' className='upload-btn' >Upload Image</Button>
         </form>
-        <Link to={`/index`} ><span className='edit-next-btn'>Next</span></Link>
+        <Link to={`/profile`} ><span className='edit-next-btn'>Next</span></Link>
     </div>
 
        )
